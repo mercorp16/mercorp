@@ -97,6 +97,32 @@
             background-color: #F8F6F4;
             border-bottom: 1px solid #D9DDD8;
         }
+
+        /* CSS for Horizontal Scroll Animation */
+        @keyframes scroll-left-to-right {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); } /* Scrolls the duplicated content */
+        }
+
+        .certification-scroll-container {
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .certification-scroll-wrapper {
+            display: flex;
+            white-space: nowrap; /* Prevent items from wrapping */
+            animation: scroll-left-to-right 30s linear infinite; /* Adjust duration as needed */
+        }
+
+        .certification-scroll-wrapper img {
+            flex-shrink: 0; /* Prevent images from shrinking */
+            margin-right: 1.5rem; /* Space between images */
+        }
+        .certification-scroll-wrapper img:last-child {
+            margin-right: 0; /* No margin on the last item */
+        }
+        /* End CSS for Horizontal Scroll Animation */
     </style>
 </head>
 <body class="leading-relaxed">
@@ -148,19 +174,35 @@
             <div class="container mx-auto px-4 text-center">
                 <h2 class="text-3xl md:text-4xl section-header mb-8">Our Commitment to Global Quality & Safety Standards</h2>
                 <p class="text-lg mb-12 max-w-4xl mx-auto">At MERCORP™, our dedication to quality and safety is at the core of everything we do, backed by globally recognized standards. These certifications underscore our capability to meet the stringent demands of international food markets, ensuring your supply chain's integrity.</p>
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 justify-items-center">
-                    <!-- Quality Commitment Logo Badges -->
-                    <img src="assets/images/eu-organic.png" alt="EU Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white">
-                    <img src="assets/images/canada-organic.png" alt="Canada Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white">
-                    <img src="assets/images/usda-organic.png" alt="USDA Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white">
-                    <img src="assets/images/ifoam-organic.png" alt="IFOAM Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white">
-                    <img src="assets/images/halal.png" alt="Halal Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white">
-                    <img src="assets/images/haccp.png" alt="HACCP Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white">
-                    <img src="assets/images/gmp.png" alt="GMP Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white">
-                    <img src="assets/images/gmo-free.png" alt="GMO Free Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white">
-                    <img src="assets/images/gluten-free.png" alt="Gluten Free Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white">
-                    <img src="assets/images/palm-oil-free.png" alt="Palm Oil Free Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white">
-                    <img src="assets/images/vegan.png" alt="Vegan Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white">
+                <!-- Animated Certification Logos - Home Page -->
+                <div class="certification-scroll-container">
+                    <div class="certification-scroll-wrapper">
+                        <!-- Duplicate the logos once for seamless loop -->
+                        <img src="assets/images/eu-organic.png" alt="EU Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/canada-organic.png" alt="Canada Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/usda-organic.png" alt="USDA Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/ifoam-organic.png" alt="IFOAM Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/halal.png" alt="Halal Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/haccp.png" alt="HACCP Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/gmp.png" alt="GMP Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/gmo-free.png" alt="GMO Free Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/gluten-free.png" alt="Gluten Free Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/palm-oil-free.png" alt="Palm Oil Free Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/vegan.png" alt="Vegan Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+
+                        <!-- Duplicate set of logos -->
+                        <img src="assets/images/eu-organic.png" alt="EU Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/canada-organic.png" alt="Canada Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/usda-organic.png" alt="USDA Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/ifoam-organic.png" alt="IFOAM Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/halal.png" alt="Halal Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/haccp.png" alt="HACCP Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/gmp.png" alt="GMP Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/gmo-free.png" alt="GMO Free Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/gluten-free.png" alt="Gluten Free Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/palm-oil-free.png" alt="Palm Oil Free Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/vegan.png" alt="Vegan Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                    </div>
                 </div>
             </div>
         </section>
@@ -330,7 +372,8 @@
                     <div class="bg-[#F4F1EC] rounded-xl shadow-lg p-6">
                         <h3 class="text-2xl font-semibold text-[#1A2E5C] mb-4">Organic & Ecological Purity</h3>
                         <div class="flex items-center space-x-4 mb-4">
-                            <img src="assets/images/organic-certification-group.png" alt="Organic Certification Logos" class="w-20 h-20 rounded-full bg-white p-2">
+                            <!-- Changed to rounded-md for rectangular display -->
+                            <img src="assets/images/organic-certification-group.png" alt="Organic Certification Logos" class="w-20 h-20 rounded-md shadow-md p-2 bg-white">
                             <p class="text-lg font-medium text-gray-700">EU Organic, Canada Organic, USDA Organic, IFOAM Organic</p>
                         </div>
                         <p class="text-sub">These certifications guarantee that our products are grown and processed without synthetic pesticides, fertilizers, or GMOs, adhering to strict organic farming and handling practices recognized worldwide.</p>
@@ -338,7 +381,8 @@
                     <div class="bg-[#F4F1EC] rounded-xl shadow-lg p-6">
                         <h3 class="text-2xl font-semibold text-[#1A2E5C] mb-4">Food Safety & Manufacturing Excellence</h3>
                         <div class="flex items-center space-x-4 mb-4">
-                            <img src="assets/images/food-safety-certification-group.png" alt="Food Safety Certification Logos" class="w-20 h-20 rounded-full bg-white p-2">
+                            <!-- Changed to rounded-md for rectangular display -->
+                            <img src="assets/images/food-safety-certification-group.png" alt="Food Safety Certification Logos" class="w-20 h-20 rounded-md shadow-md p-2 bg-white">
                             <p class="text-lg font-medium text-gray-700">HACCP, GMP</p>
                         </div>
                         <p class="text-sub">Our manufacturing facilities operate under stringent HACCP and GMP protocols, ensuring the highest levels of food safety, hygiene, and consistent product quality throughout every stage of production.</p>
@@ -346,7 +390,8 @@
                     <div class="bg-[#F4F1EC] rounded-xl shadow-lg p-6">
                         <h3 class="text-2xl font-semibold text-[#1A2E5C] mb-4">Dietary & Ethical Compliance</h3>
                         <div class="flex items-center space-x-4 mb-4">
-                            <img src="assets/images/dietary-ethical-compliance-group.png" alt="Dietary and Ethical Certification Logos" class="w-20 h-20 rounded-full bg-white p-2">
+                            <!-- Changed to rounded-md for rectangular display -->
+                            <img src="assets/images/dietary-ethical-compliance-group.png" alt="Dietary and Ethical Certification Logos" class="w-20 h-20 rounded-md shadow-md p-2 bg-white">
                             <p class="text-lg font-medium text-gray-700">Halal, Vegan</p>
                         </div>
                         <p class="text-sub">Our Halal certification ensures compliance with Islamic dietary laws, making our products suitable for Middle Eastern markets. Our vegan offerings cater to plant-based diets, reflecting our commitment to diverse consumer needs.</p>
@@ -354,10 +399,11 @@
                     <div class="bg-[#F4F1EC] rounded-xl shadow-lg p-6">
                         <h3 class="text-2xl font-semibold text-[#1A2E5C] mb-4">Pure Ingredients & Free-From Assurances</h3>
                         <div class="flex items-center space-x-4 mb-4">
-                            <img src="assets/images/pure-ingredients-free-from-assurances-group.png" alt="Free-From Certification Logos" class="w-20 h-20 rounded-full bg-white p-2">
+                            <!-- Changed to rounded-md for rectangular display -->
+                            <img src="assets/images/pure-ingredients-free-from-assurances-group.png" alt="Free-From Certification Logos" class="w-20 h-20 rounded-md shadow-md p-2 bg-white">
                             <p class="text-lg font-medium text-gray-700">GMO-Free, Gluten-Free, Palm Oil Free</p>
-                        </div
-                        ><p class="text-sub">We guarantee our products are free from genetically modified organisms, gluten, and palm oil, addressing key consumer concerns for clean-label, allergen-friendly, and environmentally responsible options.</p>
+                        </div>
+                        <p class="text-sub">We guarantee our products are free from genetically modified organisms, gluten, and palm oil, addressing key consumer concerns for clean-label, allergen-friendly, and environmentally responsible options.</p>
                     </div>
                 </div>
                 <div class="mt-12">
@@ -435,20 +481,38 @@
             <div class="container mx-auto px-4 text-center">
                 <h2 class="text-3xl md:text-4xl section-header mb-8">Our Unwavering Commitment to Global Quality Standards</h2>
                 <p class="text-lg mb-12 max-w-4xl mx-auto">Every product from MERCORP™ is a testament to our strict adherence to international quality and safety benchmarks. We ensure that our entire production process, from sourcing to packaging, meets the highest industry standards.</p>
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 justify-items-center mb-12">
-                    <!-- Certifications for Products -->
-                    <img src="assets/images/eu-organic.png" alt="EU Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white">
-                    <img src="assets/images/usda-organic.png" alt="USDA Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white">
-                    <img src="assets/images/ifoam-organic.png" alt="IFOAM Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white">
-                    <img src="assets/images/halal.png" alt="Halal Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white">
-                    <img src="assets/images/haccp.png" alt="HACCP Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white">
-                    <img src="assets/images/gmp.png" alt="GMP Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white">
-                    <img src="assets/images/gmo-free.png" alt="GMO Free Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white">
-                    <img src="assets/images/gluten-free.png" alt="Gluten Free Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white">
-                    <img src="assets/images/palm-oil-free.png" alt="Palm Oil Free Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white">
-                    <img src="assets/images/vegan.png" alt="Vegan Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white">
+                <!-- Animated Certification Logos - Product Page -->
+                <div class="certification-scroll-container mb-12">
+                    <div class="certification-scroll-wrapper">
+                        <!-- Duplicate the logos once for seamless loop -->
+                        <img src="assets/images/eu-organic.png" alt="EU Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/canada-organic.png" alt="Canada Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/usda-organic.png" alt="USDA Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/ifoam-organic.png" alt="IFOAM Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/halal.png" alt="Halal Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/haccp.png" alt="HACCP Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/gmp.png" alt="GMP Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/gmo-free.png" alt="GMO Free Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/gluten-free.png" alt="Gluten Free Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/palm-oil-free.png" alt="Palm Oil Free Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/vegan.png" alt="Vegan Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+
+                        <!-- Duplicate set of logos -->
+                        <img src="assets/images/eu-organic.png" alt="EU Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/canada-organic.png" alt="Canada Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/usda-organic.png" alt="USDA Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/ifoam-organic.png" alt="IFOAM Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/halal.png" alt="Halal Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/haccp.png" alt="HACCP Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/gmp.png" alt="GMP Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/gmo-free.png" alt="GMO Free Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/gluten-free.png" alt="Gluten Free Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/palm-oil-free.png" alt="Palm Oil Free Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                        <img src="assets/images/vegan.png" alt="Vegan Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
+                    </div>
                 </div>
-                <a href="#about-us" class="btn-primary text-xl">Learn More About Our Certifications</a>
+                <!-- Removed CTA button -->
+                <!-- <a href="#about-us" class="btn-primary text-xl">Learn More About Our Certifications</a> -->
             </div>
         </section>
 

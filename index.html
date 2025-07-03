@@ -1,1 +1,408 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercorp Organic Brown Rice Crackers (BBQ) - Smoky & Sweet Baked Snacks</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Swiper.js for sliders -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+    <style>
+        /* Define color variables based on the new style guide */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #F4F1EC; /* Alabaster */
+            color: #474747; /* Dark Slate */
+        }
+        
+        /* Product Slider Styles */
+        .product-slider .swiper-button-next, .product-slider .swiper-button-prev {
+            color: #2D241B; /* Deep Charcoal */
+            background-color: rgba(244, 241, 236, 0.7);
+            width: 40px;
+            height: 40px;
+            border-radius: 100%;
+        }
+        .product-slider .swiper-button-next:after, .product-slider .swiper-button-prev:after {
+            font-size: 18px;
+        }
+        .product-slider .swiper-pagination-bullet-active {
+            background-color: #2D241B;
+        }
+    </style>
+</head>
+<body class="bg-[#F4F1EC]">
+
+    <!-- HEADER -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#">
+                <img src="https://placehold.co/150x50/ffffff/2D241B?text=mercorp-logo.svg" alt="Mercorp Company Logo" class="h-10">
+            </a>
+            <nav class="hidden lg:flex items-center space-x-6 text-[#474747] font-medium">
+                <a href="#" class="hover:text-[#B89D62]">Home</a>
+                <a href="#" class="hover:text-[#B89D62]">About Us</a>
+                <a href="#" class="text-[#B89D62] font-semibold border-b-2 border-[#B89D62]">Products</a>
+                <a href="#" class="hover:text-[#B89D62]">Services</a>
+                <a href="#" class="hover:text-[#B89D62]">Blog</a>
+                <a href="#" class="hover:text-[#B89D62]">FAQs</a>
+                <a href="#" class="bg-[#B89D62] text-[#2D241B] px-4 py-2 rounded-full hover:bg-[#A88A44] transition">Contact Us</a>
+            </nav>
+            <button class="lg:hidden">
+                <i class="fas fa-bars text-2xl text-[#3B3418]"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section 1: Hero Banner -->
+        <section class="relative w-full h-[40vh] bg-cover bg-center" style="background-image: url('https://placehold.co/1920x500/b89d62/2d241b?text=mercorp-brown-rice-cracker-bbq-hero.jpg');">
+            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-center">
+                <div class="text-white px-4">
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-[#EAEBD0]">ORGANIC BROWN RICE CRACKERS – BBQ FLAVOR</h1>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Breadcrumb -->
+        <div class="bg-white">
+            <div class="container mx-auto px-6">
+                <nav class="text-sm text-[#8C7C6C] py-4" aria-label="Breadcrumb">
+                    <ol class="list-none p-0 inline-flex flex-wrap">
+                         <li class="flex items-center">
+                            <a href="#" class="hover:text-[#3B3418]">Home</a>
+                            <i class="fas fa-chevron-right mx-2 text-xs"></i>
+                        </li>
+                        <li class="flex items-center">
+                            <a href="#" class="hover:text-[#3B3418]">Products</a>
+                            <i class="fas fa-chevron-right mx-2 text-xs"></i>
+                        </li>
+                        <li class="flex items-center">
+                            <a href="#" class="hover:text-[#3B3418]">Organic Crackers</a>
+                            <i class="fas fa-chevron-right mx-2 text-xs"></i>
+                        </li>
+                         <li class="flex items-center">
+                            <a href="#" class="hover:text-[#3B3418]">Organic Brown Rice Crackers</a>
+                            <i class="fas fa-chevron-right mx-2 text-xs"></i>
+                        </li>
+                        <li class="text-[#474747]" aria-current="page">
+                            BBQ Flavor
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Section 2: Main Product Details -->
+        <section class="py-16 sm:py-20">
+            <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-start">
+                <!-- Image Slider -->
+                <div class="w-full sticky top-28">
+                    <div class="swiper-container product-slider rounded-lg shadow-lg">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="https://placehold.co/1200x1200/f4f1ec/2d241b?text=mercorp-brown-rice-crackers-bbq-60g.jpg" alt="Front view of the 60g Mercorp Organic Brown Rice Crackers - BBQ packaging." class="w-full h-auto"></div>
+                            <div class="swiper-slide"><img src="https://placehold.co/1200x1200/eaebe0/2d241b?text=mercorp-brown-rice-crackers-bbq-115g.jpg" alt="The 115g box of Mercorp's smoky BBQ crackers." class="w-full h-auto"></div>
+                        </div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <!-- Text Details -->
+                <div class="w-full">
+                    <h2 class="text-3xl font-bold text-[#2D241B]">A PERFECTLY SMOKY & SAVORY BLEND</h2>
+                    <p class="mt-4 text-[#474747] leading-relaxed">Capture the essence of a summer barbecue with our BBQ flavored crackers. This classic recipe delivers a perfect harmony of smoky, sweet, and savory notes with a hint of paprika. It's a crowd-pleasing favorite that offers a robust and satisfying taste on our crispy organic brown rice cracker.</p>
+                    
+                    <!-- Nutritional Info Table -->
+                    <div class="mt-8">
+                        <h3 class="font-bold text-lg text-[#2D241B] mb-4">Nutritional Information</h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm text-left border border-[#A39384]">
+                                <thead class="bg-[#F4F1EC] text-[#3B3418]">
+                                    <tr>
+                                        <th class="p-3 border-b border-[#A39384]">Average quantity per</th>
+                                        <th class="p-3 border-b border-[#A39384] text-center">Per Serving (12.5g)</th>
+                                        <th class="p-3 border-b border-[#A39384] text-center">Per 100g</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-[#474747]">
+                                    <tr class="border-b border-gray-200"><td class="p-3">Energy (kJ / kcal)</td><td class="p-3 text-center">201 kJ / 48 kcal</td><td class="p-3 text-center">1610 kJ / 384.9 kcal</td></tr>
+                                    <tr class="bg-gray-50 border-b border-gray-200"><td class="p-3">Protein (g)</td><td class="p-3 text-center">0.8 g</td><td class="p-3 text-center">6.7 g</td></tr>
+                                    <tr class="border-b border-gray-200"><td class="p-3 pl-8">- gluten (g)</td><td class="p-3 text-center">0 g</td><td class="p-3 text-center">0 g</td></tr>
+                                    <tr class="bg-gray-50 border-b border-gray-200"><td class="p-3">Fat, total (g)</td><td class="p-3 text-center">1.0 g</td><td class="p-3 text-center">7.6 g</td></tr>
+                                    <tr class="border-b border-gray-200"><td class="p-3 pl-8">- saturated (g)</td><td class="p-3 text-center">0.1 g</td><td class="p-3 text-center">1.0 g</td></tr>
+                                    <tr class="bg-gray-50 border-b border-gray-200"><td class="p-3 pl-8">- trans (g)</td><td class="p-3 text-center">0 g</td><td class="p-3 text-center">0 g</td></tr>
+                                    <tr class="border-b border-gray-200"><td class="p-3">Carbohydrate (g)</td><td class="p-3 text-center">9.0 g</td><td class="p-3 text-center">72.1 g</td></tr>
+                                    <tr class="bg-gray-50 border-b border-gray-200"><td class="p-3 pl-8">- sugars (g)</td><td class="p-3 text-center">0.4 g</td><td class="p-3 text-center">3.2 g</td></tr>
+                                    <tr class="border-b border-gray-200"><td class="p-3">Dietary Fibre (g)</td><td class="p-3 text-center">0.5 g</td><td class="p-3 text-center">4.3 g</td></tr>
+                                    <tr class="bg-gray-50"><td class="p-3">Salt (g)</td><td class="p-3 text-center">0.1275 g</td><td class="p-3 text-center">1.0225 g</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="text-xs text-[#8C7C6C] mt-2">Note: Nutritional values are based on a standard serving size of 12.5g. For official labeling, please refer to the actual product packaging or contact us at info@mercorp.co.th</p>
+                    </div>
+
+                    <!-- Other Details -->
+                    <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+                        <div><strong class="text-[#2D241B] block">Ingredients:</strong> Organic Brown Rice Flour (90%), Organic Sunflower Oil (5%), BBQ Seasoning (5%)</div>
+                        <div><strong class="text-[#2D241B] block">Allergens:</strong> Produced on equipment that also processes soy, sesame and milk.</div>
+                        <div><strong class="text-[#2D241B] block">Package Size:</strong> 60 g and 115 g</div>
+                        <div><strong class="text-[#2D241B] block">Storage:</strong> Keep in an airtight container after opening.</div>
+                        <div><strong class="text-[#2D241B] block">Origin:</strong> Product of Thailand</div>
+                    </div>
+
+                    <!-- Certifications -->
+                    <div class="mt-8">
+                        <strong class="text-[#2D241B] block mb-3">Certifications:</strong>
+                        <div class="flex flex-wrap gap-4 items-center">
+                           <img src="https://placehold.co/50x50/f4f1ec/3b3418?text=EU" alt="eu organic certified logo" title="EU Organic" class="h-10">
+                           <img src="https://placehold.co/50x50/f4f1ec/3b3418?text=Halal" alt="halal certified logo" title="Halal" class="h-10">
+                           <img src="https://placehold.co/50x50/f4f1ec/3b3418?text=Vegan" alt="vegan certified logo" title="Vegan" class="h-10">
+                           <img src="https://placehold.co/50x50/f4f1ec/3b3418?text=Non-GMO" alt="non-gmo project verified logo" title="Non-GMO" class="h-10">
+                           <img src="https://placehold.co/50x50/f4f1ec/3b3418?text=Gluten-Free" alt="gluten-free certified logo" title="Gluten-Free" class="h-10">
+                           <img src="https://placehold.co/50x50/f4f1ec/3b3418?text=Palm-Oil-Free" alt="palm oil free product logo" title="Palm Oil Free" class="h-10">
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="mt-8 inline-block w-full text-center bg-[#B89D62] text-[#2D241B] px-6 py-3 rounded-full font-bold hover:bg-[#A88A44] transition">Download Product Spec Sheet <i class="fas fa-download ml-2"></i></a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section 3: Our Mercorp Quality Promise -->
+        <section class="bg-white py-16">
+            <div class="container mx-auto px-6 text-center">
+                 <h2 class="text-3xl font-extrabold text-[#2D241B]">OUR MERCORP QUALITY PROMISE</h2>
+                 <p class="mt-4 max-w-3xl mx-auto text-[#474747] leading-relaxed">At Mercorp, we believe that great snacks begin with the best ingredients. Every cracker we produce is crafted from carefully selected organic raw materials. We are committed to a <strong class="text-[#3B3418]">"Baked, Not Fried"</strong> philosophy to preserve nutritional value and deliver a naturally light, crispy texture. All our products are free from MSG and preservatives, reflecting our unwavering promise to deliver snacks that are not only delicious but genuinely wholesome.</p>
+            </div>
+        </section>
+
+        <!-- Section 4: Discover Other Flavors -->
+        <section class="py-16 sm:py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center">
+                    <h2 class="text-3xl font-extrabold text-[#2D241B]">DISCOVER MORE BROWN RICE FLAVORS</h2>
+                     <p class="mt-4 max-w-3xl mx-auto text-[#474747] leading-relaxed">While our BBQ flavor is a savory favorite, explore the other exciting flavors in our Brown Rice Cracker family.</p>
+                </div>
+                <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Flavor Card -->
+                    <a href="#" class="block bg-white rounded-lg shadow-md overflow-hidden group">
+                        <img src="https://placehold.co/600x400/f4f1ec/2d241b?text=mercorp-brown-rice-crackers-original.jpg" alt="Mercorp's Original Flavor Organic Brown Rice Crackers." class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-4 text-center">
+                            <h4 class="text-lg font-bold text-[#2D241B]">Original Flavor</h4>
+                        </div>
+                    </a>
+                    <!-- Flavor Card -->
+                    <a href="#" class="block bg-white rounded-lg shadow-md overflow-hidden group">
+                        <img src="https://placehold.co/600x400/b89d62/2d241b?text=mercorp-brown-rice-crackers-cheese.jpg" alt="Mercorp's savory Cheese Flavor Brown Rice Crackers." class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-4 text-center">
+                            <h4 class="text-lg font-bold text-[#2D241B]">Cheese</h4>
+                        </div>
+                    </a>
+                    <!-- Flavor Card -->
+                    <a href="#" class="block bg-white rounded-lg shadow-md overflow-hidden group">
+                        <img src="https://placehold.co/600x400/3b3418/eaebe0?text=mercorp-brown-rice-crackers-seaweed.jpg" alt="Mercorp's umami Seaweed Flavor Brown Rice Crackers." class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-4 text-center">
+                            <h4 class="text-lg font-bold text-[#2D241B]">Umami Seaweed</h4>
+                        </div>
+                    </a>
+                    <!-- Flavor Card -->
+                    <a href="#" class="block bg-white rounded-lg shadow-md overflow-hidden group">
+                        <img src="https://placehold.co/600x400/a39384/2d241b?text=mercorp-brown-rice-crackers-salt-vinegar.jpg" alt="Mercorp's tangy Salt & Vinegar Flavor Brown Rice Crackers." class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-4 text-center">
+                            <h4 class="text-lg font-bold text-[#2D241B]">Salt & Vinegar</h4>
+                        </div>
+                    </a>
+                    <!-- Flavor Card -->
+                    <a href="#" class="block bg-white rounded-lg shadow-md overflow-hidden group">
+                        <img src="https://placehold.co/600x400/474747/eaebe0?text=mercorp-brown-rice-crackers-sour-cream.jpg" alt="Mercorp's creamy Sour Cream Flavor Brown Rice Crackers." class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-4 text-center">
+                            <h4 class="text-lg font-bold text-[#2D241B]">Sour Cream</h4>
+                        </div>
+                    </a>
+                    <!-- Flavor Card -->
+                    <a href="#" class="block bg-white rounded-lg shadow-md overflow-hidden group">
+                        <img src="https://placehold.co/600x400/b89d62/2d241b?text=mercorp-brown-rice-crackers-tom-yum.jpg" alt="Mercorp's authentic Tom Yum Flavor Brown Rice Crackers." class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-4 text-center">
+                            <h4 class="text-lg font-bold text-[#2D241B]">Authentic Tom Yum</h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: You May Also Like -->
+        <section class="py-16 sm:py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-extrabold text-center text-[#2D241B] mb-12">EXPLORE OTHER HEALTHY SELECTIONS</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Product Card -->
+                    <div class="bg-[#F4F1EC] rounded-lg shadow-md overflow-hidden group">
+                        <img src="https://placehold.co/600x600/2d241b/eaebe0?text=mercorp-black-rice-crackers-60g.jpg" alt="Mercorp Organic Black Rice Crackers 60g pack" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-[#2D241B]">Organic Black Rice Crackers</h3>
+                            <p class="text-[#474747] mt-2 text-sm">Experience the rich, distinctive flavor of black rice, baked to crispy perfection for a truly unique snack.</p>
+                            <a href="#" class="font-bold text-[#3B3418] hover:text-[#B89D62] mt-4 inline-block">Learn More <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
+                        </div>
+                    </div>
+                    <!-- Product Card -->
+                    <div class="bg-[#F4F1EC] rounded-lg shadow-md overflow-hidden group">
+                        <img src="https://placehold.co/600x600/a39384/eaebe0?text=mercorp-chickpea-crackers-60g.jpg" alt="Mercorp Organic Chickpea Crackers 60g pack" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-[#2D241B]">Organic Chickpea Crackers</h3>
+                            <p class="text-[#474747] mt-2 text-sm">Savor the plant-powered goodness of chickpeas in every crunchy bite. A delicious, protein-rich alternative.</p>
+                            <a href="#" class="font-bold text-[#3B3418] hover:text-[#B89D62] mt-4 inline-block">Learn More <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
+                        </div>
+                    </div>
+                    <!-- Product Card -->
+                    <div class="bg-[#F4F1EC] rounded-lg shadow-md overflow-hidden group">
+                        <img src="https://placehold.co/600x600/eaebe0/2d241b?text=mercorp-organic-white-crackers-60g.jpg" alt="Mercorp Organic White Rice Crackers 60g pack" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-[#2D241B]">Organic White Rice Crackers</h3>
+                            <p class="text-[#474747] mt-2 text-sm">Light and crisp with a neutral flavor, ideal for quick energy and a smooth, easily digestible snack anytime.</p>
+                            <a href="#" class="font-bold text-[#3B3418] hover:text-[#B89D62] mt-4 inline-block">Learn More <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
+                        </div>
+                    </div>
+                    <!-- Product Card -->
+                    <div class="bg-[#F4F1EC] rounded-lg shadow-md overflow-hidden group">
+                        <img src="https://placehold.co/600x600/3b3418/eaebe0?text=mercorp-mung-bean-crackers-60g.jpg" alt="Mercorp Organic Mung Bean Crackers 60g pack" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-[#2D241B]">Organic Mung Bean Crackers</h3>
+                            <p class="text-[#474747] mt-2 text-sm">Mildly sweet and nutritious, with slow-releasing carbs and antioxidants that help maintain balanced energy.</p>
+                            <a href="#" class="font-bold text-[#3B3418] hover:text-[#B89D62] mt-4 inline-block">Learn More <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: FAQ -->
+        <section class="py-16 sm:py-20">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <h2 class="text-3xl font-extrabold text-center text-[#2D241B] mb-12">FREQUENTLY ASKED QUESTIONS</h2>
+                <div class="space-y-6">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="font-bold text-lg text-[#2D241B]">Is the BBQ flavor spicy?</h4>
+                        <p class="mt-2 text-sm text-[#474747]">Our BBQ flavor is crafted to be savory and smoky rather than spicy, making it enjoyable for a wide audience. It has a rich, sweet, and tangy profile with just a hint of warmth from paprika.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="font-bold text-lg text-[#2D241B]">What makes your BBQ seasoning 'natural'?</h4>
+                        <p class="mt-2 text-sm text-[#474747]">Our seasoning is made from real food ingredients like smoked paprika, tomato powder, and onion powder. We do not use artificial flavors, flavor enhancers like MSG, or synthetic colors.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="font-bold text-lg text-[#2D241B]">How does this BBQ flavor compare to those on potato chips?</h4>
+                        <p class="mt-2 text-sm text-[#474747]">You get the same robust, satisfying BBQ flavor you love, but on a superior base. Our crackers are baked from organic whole-grain brown rice, making them a lighter, crispier, and more wholesome alternative to deep-fried potato chips.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: End Section CTA -->
+        <section class="bg-[#B89D62]">
+            <div class="container mx-auto px-6 py-16 text-center">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-[#2D241B]">READY TO PARTNER FOR SMOKY BBQ CRACKERS?</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-[#2D241B] opacity-90">Our team is dedicated to providing high-quality solutions. Contact us for bulk orders, private label inquiries, or custom formulations.</p>
+                <a href="#" class="mt-8 inline-block bg-[#2D241B] text-[#EAEBD0] px-8 py-3 rounded-full font-bold uppercase hover:bg-opacity-90 transition-all transform hover:scale-105">CONTACT OUR EXPERTS</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#2D241B] text-[#EAEBD0]">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <!-- Column 1: Logo & Description -->
+                <div class="md:col-span-2 lg:col-span-1">
+                    <a href="#">
+                        <img src="https://placehold.co/150x50/2D241B/F4F1EC?text=mercorp-logo.svg" alt="Mercorp Company Logo" class="h-10 mb-4">
+                    </a>
+                    <p class="text-sm text-[#A39384]">
+                        We create quality driven products that support healthy living built on innovation, responsibility, and long-term partnerships.
+                    </p>
+                </div>
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h3 class="font-bold text-lg text-[#EAEBD0] mb-4">Quick Link</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-[#B89D62]">Home</a></li>
+                        <li><a href="#" class="hover:text-[#B89D62]">About Us</a></li>
+                        <li><a href="#" class="hover:text-[#B89D62]">Products</a></li>
+                        <li><a href="#" class="hover:text-[#B89D62]">Services</a></li>
+                        <li><a href="#" class="hover:text-[#B89D62]">Blog</a></li>
+                        <li><a href="#" class="hover:text-[#B89D62]">FAQs</a></li>
+                        <li><a href="#" class="hover:text-[#B89D62]">Contact Us</a></li>
+                    </ul>
+                </div>
+                <!-- Column 3: Contact Us -->
+                <div>
+                    <h3 class="font-bold text-lg text-[#EAEBD0] mb-4">Contact Us</h3>
+                    <address class="not-italic text-sm space-y-3">
+                        <p class="font-semibold text-white">Mercurius Corporation Co., Ltd.</p>
+                        <p class="text-[#A39384]">100/2 Vongvanij Building B, Rama 9, Huai Kwang, Bangkok 10310, Thailand</p>
+                        <p><a href="mailto:info@mercorp.co.th" class="hover:text-[#B89D62]">E-mail: info@mercorp.co.th</a></p>
+                        <p><a href="https://wa.me/66619697945" class="hover:text-[#B89D62]">Tel / WhatsApp: +66 (0) 61 969 7945</a></p>
+                    </address>
+                </div>
+                <!-- Column 4: Standards & Social -->
+                <div>
+                    <h3 class="font-bold text-lg text-[#EAEBD0] mb-4">Our Standards</h3>
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <img src="https://placehold.co/40x40/ffffff/000000?text=EU" alt="eu organic certified logo for mercorp products." title="EU Organic">
+                        <img src="https://placehold.co/40x40/ffffff/000000?text=USDA" alt="usda organic certified logo for mercorp products." title="USDA Organic">
+                        <img src="https://placehold.co/40x40/ffffff/000000?text=CAN" alt="canada organic certified logo for mercorp products." title="Canada Organic">
+                        <img src="https://placehold.co/40x40/ffffff/000000?text=Halal" alt="halal certified product for mercorp products." title="Halal Certified">
+                        <img src="https://placehold.co/40x40/ffffff/000000?text=GMP" alt="gmp (good manufacturing practices) certified logo for mercorp products." title="GMP Certified">
+                        <img src="https://placehold.co/40x40/ffffff/000000?text=HACCP" alt="haccp (hazard analysis critical control point) certified logo for mercorp" title="HACCP Certified">
+                    </div>
+                    <h3 class="font-bold text-lg text-[#EAEBD0] mb-4">Social Media</h3>
+                    <div class="flex space-x-4 text-2xl">
+                       <a href="https://www.facebook.com/profile.php?id=61561182343259" class="hover:text-[#B89D62]"><i class="fab fa-facebook"></i></a>
+                       <a href="https://wa.me/66619697945" class="hover:text-[#B89D62]"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bottom Bar -->
+        <div class="bg-[#2D241B] border-t border-[#3B3418]">
+            <div class="container mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center text-sm text-[#A39384]">
+                <p>&copy; 2025 Mercurius Corporation Co., Ltd all right reserved.</p>
+                <div class="space-x-4 mt-4 sm:mt-0">
+                    <a href="#" class="hover:text-[#B89D62]">Privacy Policy</a>
+                    <a href="#" class="hover:text-[#B89D62]">Cookies Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Product Slider Initialization
+        const productSwiper = new Swiper('.product-slider', {
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+</body>
+</html>
 

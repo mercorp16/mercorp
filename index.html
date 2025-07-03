@@ -3,1289 +3,402 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Primary Meta Tags for Home Page (Adjust for specific pages if truly multi-page) -->
-    <title>MERCORP™ | Premium Organic Food Solutions for B2B | OEM & Sourcing</title>
-    <meta name="description" content="MERCORP™ is your trusted B2B partner for premium organic, gluten-free, and healthy food products. Explore our OEM, sourcing, and trading services backed by global certifications like EU Organic, USDA, HACCP, and Halal.">
-
-    <!-- Tailwind CSS CDN -->
+    <title>Mercorp: Nourishing Futures, One Wholesome Bite</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Font: Montserrat -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Swiper.js for sliders -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
     <style>
+        /* Define color variables based on the style guide */
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #F4F1EC; /* Warm Cream */
-            color: #2E2E2E; /* Dark Charcoal */
-        }
-        /* Custom styles for smooth scroll and button effects */
-        html {
-            scroll-behavior: smooth;
-        }
-        .btn-primary {
-            background-color: #D4A574; /* Warm Gold */
-            color: #FFFFFF;
-            padding: 0.75rem 1.5rem;
-            border-radius: 9999px;
-            font-weight: 600;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-        .btn-primary:hover {
-            background-color: #c09163;
-            transform: translateY(-2px);
-        }
-        .btn-conversion {
-            background-color: #A93226; /* Red Wine */
-            color: #FFFFFF;
-            padding: 0.75rem 1.5rem;
-            border-radius: 9999px;
-            font-weight: 600;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-        .btn-conversion:hover {
-            background-color: #8c2a1f;
-            transform: translateY(-2px);
-        }
-        .section-header {
-            color: #1A2E5C; /* Primary Navy */
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-        }
-        .text-sub {
-            color: #707070; /* Grey */
-        }
-        .bg-secondary-green {
-            background-color: #5A7D5A; /* Sage Green */
-        }
-        .border-divider {
-            border-color: #D9DDD8; /* Soft Olive Grey */
-        }
-        .focus-ring-gold:focus {
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.5); /* Warm Gold with transparency */
-        }
-        /* Style for FAQ accordions */
-        details summary {
-            cursor: pointer;
-            padding: 1rem;
-            border-bottom: 1px solid #D9DDD8;
-            font-weight: 600;
-            color: #1A2E5C;
-            list-style: none; /* Remove default marker */
-            position: relative;
-        }
-        details summary::-webkit-details-marker {
-            display: none; /* Hide marker for WebKit browsers */
-        }
-        details summary::after {
-            content: '+';
-            position: absolute;
-            right: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            transition: transform 0.2s ease;
-        }
-        details[open] summary::after {
-            content: '-';
-            transform: translateY(-50%) rotate(0deg);
-        }
-        details[open] summary {
-            border-bottom: none;
-        }
-        details .faq-content {
-            padding: 1rem;
-            background-color: #F8F6F4;
-            border-bottom: 1px solid #D9DDD8;
+            background-color: #F4F1EC; /* Alabaster */
+            color: #474747; /* Dark Slate */
         }
 
-        /* CSS for Horizontal Scroll Animation */
-        @keyframes scroll-left-to-right {
-            0% { transform: translateX(0%); }
-            100% { transform: translateX(-50%); } /* Scrolls the duplicated content */
+        /* Hero Slider Styles */
+        .hero-slider .swiper-button-next, .hero-slider .swiper-button-prev {
+            color: #EAEBD0; /* Soft White */
+            background-color: rgba(45, 36, 27, 0.5); /* Deep Charcoal with opacity */
+            width: 44px;
+            height: 44px;
+            border-radius: 100%;
+            transition: background-color 0.3s;
+        }
+        .hero-slider .swiper-button-next:hover, .hero-slider .swiper-button-prev:hover {
+            background-color: rgba(45, 36, 27, 0.8);
+        }
+        .hero-slider .swiper-button-next:after, .hero-slider .swiper-button-prev:after {
+            font-size: 20px;
+        }
+        .hero-slider .swiper-pagination-bullet {
+            background-color: rgba(234, 235, 208, 0.5); /* Soft White with opacity */
+            opacity: 1;
+        }
+        .hero-slider .swiper-pagination-bullet-active {
+            background-color: #EAEBD0; /* Soft White */
         }
 
-        .certification-scroll-container {
-            overflow: hidden;
-            width: 100%;
+        /* Infinite Logo Scroller */
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
-
-        .certification-scroll-wrapper {
+        .scroller .scroller-track {
+            animation: scroll 40s linear infinite;
             display: flex;
-            white-space: nowrap; /* Prevent items from wrapping */
-            animation: scroll-left-to-right 30s linear infinite; /* Adjust duration as needed */
+            width: calc(250px * 22); /* Updated width for larger logos */
+        }
+        .scroller:hover .scroller-track {
+            animation-play-state: paused;
         }
 
-        .certification-scroll-wrapper img {
-            flex-shrink: 0; /* Prevent images from shrinking */
-            margin-right: 1.5rem; /* Space between images */
+        /* Google Translate Widget Styles */
+        #google_translate_element {
+            display: inline-block;
         }
-        .certification-scroll-wrapper img:last-child {
-            margin-right: 0; /* No margin on the last item */
+        .goog-te-gadget-simple {
+            background-color: transparent !important;
+            border: none !important;
         }
-        /* End CSS for Horizontal Scroll Animation */
+        .goog-te-gadget-icon {
+            display: none !important;
+        }
+        .goog-te-menu-value span {
+            color: #474747 !important;
+            font-weight: 500;
+        }
+        .goog-te-menu-value span:hover {
+            color: #B89D62 !important;
+        }
+        /* Hide Google's top banner */
+        body {
+            top: 0 !important;
+        }
+        .skiptranslate {
+            display: none !important;
+        }
     </style>
 </head>
-<body class="leading-relaxed">
+<body class="bg-[#F4F1EC]">
 
-    <!-- Header -->
-    <header class="bg-[#1A2E5C] text-white p-4 shadow-lg fixed w-full z-50">
-        <nav class="container mx-auto flex justify-between items-center px-4">
-            <div class="flex items-center">
-                <!-- MERCORP™ Logo -->
-                <img src="assets/images/mercorp-logo.png" alt="MERCORP™ Company Logo" class="h-16 rounded">
-            </div>
-            <ul class="hidden md:flex space-x-6 text-lg font-medium">
-                <li><a href="#home" class="hover:text-[#D4A574] transition-colors">Home</a></li>
-                <li><a href="#about-us" class="hover:text-[#D4A574] transition-colors">About Us</a></li>
-                <li><a href="#products" class="hover:text-[#D4A574] transition-colors">Products</a></li>
-                <li><a href="#services" class="hover:text-[#D4A574] transition-colors">Services</a></li>
-                <li><a href="#blog" class="hover:text-[#D4A574] transition-colors">Blog</a></li>
-                <li><a href="#faqs" class="hover:text-[#D4A574] transition-colors">FAQs</a></li>
-                <li><a href="#contact-us" class="hover:text-[#D4A574] transition-colors">Contact Us</a></li>
-            </ul>
+    <!-- HEADER -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-[#2D241B]">
+                MERCORP™
+            </a>
+            <!-- Desktop Menu -->
+            <nav class="hidden lg:flex items-center space-x-6 text-[#474747] font-medium">
+                <a href="#" class="text-[#B89D62] font-semibold border-b-2 border-[#B89D62]">Home</a>
+                <a href="#" class="hover:text-[#B89D62]">About Us</a>
+                <a href="#" class="hover:text-[#B89D62]">Products</a>
+                <a href="#" class="hover:text-[#B89D62]">Services</a>
+                <a href="#" class="hover:text-[#B89D62]">Blog</a>
+                <a href="#" class="hover:text-[#B89D62]">FAQs</a>
+                <div id="google_translate_element"></div>
+                <a href="#" class="bg-[#B89D62] text-[#2D241B] px-4 py-2 rounded-full hover:bg-[#A88A44] transition">Contact Us</a>
+            </nav>
             <!-- Mobile Menu Button -->
-            <button class="md:hidden text-white text-2xl focus:outline-none">
-                &#9776; <!-- Hamburger Icon -->
+            <button id="mobile-menu-button" class="lg:hidden">
+                <i class="fas fa-bars text-2xl text-[#3B3418]"></i>
             </button>
-        </nav>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-200">
+            <nav class="flex flex-col items-center space-y-4 p-4 text-[#474747] font-medium">
+                <a href="#" class="w-full text-center py-2 text-[#B89D62] font-semibold">Home</a>
+                <a href="#" class="w-full text-center py-2 hover:text-[#B89D62]">About Us</a>
+                <a href="#" class="w-full text-center py-2 hover:text-[#B89D62]">Products</a>
+                <a href="#" class="w-full text-center py-2 hover:text-[#B89D62]">Services</a>
+                <a href="#" class="w-full text-center py-2 hover:text-[#B89D62]">Blog</a>
+                <a href="#" class="w-full text-center py-2 hover:text-[#B89D62]">FAQs</a>
+                <div id="google_translate_element_mobile" class="py-2"></div>
+                <a href="#" class="w-full text-center bg-[#B89D62] text-[#2D241B] px-4 py-2 rounded-full hover:bg-[#A88A44] transition">Contact Us</a>
+            </nav>
+        </div>
     </header>
 
-    <main class="pt-16"> <!-- Padding-top to account for fixed header -->
-
-        <!-- 1. Home Page Section -->
-        <section id="home" class="min-h-screen flex items-end justify-center relative text-white">
-            <!-- Hero Banner - Full width image -->
-            <img src="assets/images/mercorp-home-hero-banner.jpg"
-                 alt="MERCORP global organic food solutions for B2B partners"
-                 class="absolute inset-0 w-full h-full object-cover">
-            <div class="absolute inset-0 bg-black opacity-50"></div> <!-- Overlay for text readability -->
-            <div class="relative z-10 text-center px-4 pb-16 md:pb-24 max-w-4xl">
-                <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">Your Partner in Premium Healthier Food Solutions</h1>
-                <p class="text-lg md:text-xl mb-8 mx-auto">Leading the future of wellness with certified organic, gluten-free, and sustainable food products for global markets.</p>
-                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-                    <a href="#products" class="btn-primary">Explore Our Products</a>
-                    <a href="#services" class="btn-primary">Discover Our Services</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Quality Commitment Section -->
-        <section class="py-16 md:py-24 bg-[#F4F1EC]">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="text-3xl md:text-4xl section-header mb-8">Our Commitment to Global Quality & Safety Standards</h2>
-                <p class="text-lg mb-12 max-w-4xl mx-auto">At MERCORP™, our dedication to quality and safety is at the core of everything we do, backed by globally recognized standards. These certifications underscore our capability to meet the stringent demands of international food markets, ensuring your supply chain's integrity.</p>
-                <!-- Animated Certification Logos - Home Page -->
-                <div class="certification-scroll-container">
-                    <div class="certification-scroll-wrapper">
-                        <!-- Duplicate the logos once for seamless loop -->
-                        <img src="assets/images/eu-organic.png" alt="EU Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/canada-organic.png" alt="Canada Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/usda-organic.png" alt="USDA Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/ifoam-organic.png" alt="IFOAM Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/halal.png" alt="Halal Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/haccp.png" alt="HACCP Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/gmp.png" alt="GMP Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/gmo-free.png" alt="GMO Free Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/gluten-free.png" alt="Gluten Free Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/palm-oil-free.png" alt="Palm Oil Free Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/vegan.png" alt="Vegan Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-
-                        <!-- Duplicate set of logos -->
-                        <img src="assets/images/eu-organic.png" alt="EU Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/canada-organic.png" alt="Canada Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/usda-organic.png" alt="USDA Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/ifoam-organic.png" alt="IFOAM Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/halal.png" alt="Halal Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/haccp.png" alt="HACCP Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/gmp.png" alt="GMP Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/gmo-free.png" alt="GMO Free Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/gluten-free.png" alt="Gluten Free Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/palm-oil-free.png" alt="Palm Oil Free Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/vegan.png" alt="Vegan Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Featured Products Section -->
-        <section class="py-16 md:py-24 bg-white">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="text-3xl md:text-4xl section-header mb-8">Healthier Habits Begin with Smarter Choices</h2>
-                <p class="text-lg mb-12 max-w-4xl mx-auto">Our products are thoughtfully made to meet today’s demand for clean, functional, and feel-good nutrition. They’re more than just convenient – they’re an upgrade to your everyday snacking. Whether you’re prioritizing wellness, sustainability, or simple satisfaction, our products fit your lifestyle without compromise.</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                    <!-- Product 1 -->
-                    <div class="bg-[#F4F1EC] rounded-xl shadow-lg overflow-hidden p-6 text-center">
-                        <img src="assets/images/organic-black-rice-crackers-home.jpg" alt="MERCORP Organic Black Rice Crackers, baked healthy snack" class="w-full h-auto object-cover rounded-md mb-4 shadow-sm">
-                        <h3 class="text-2xl font-semibold text-[#1A2E5C] mb-2">Organic Black Rice Crackers</h3>
-                        <p class="text-sub mb-4">Nutrient-dense and antioxidant-rich, offering a unique crisp with a slightly nutty flavor.</p>
-                        <a href="#products" class="btn-primary inline-block">Learn More</a>
-                    </div>
-                    <!-- Product 2 -->
-                    <div class="bg-[#F4F1EC] rounded-xl shadow-lg overflow-hidden p-6 text-center">
-                        <img src="assets/images/organic-chickpea-crackers-home.jpg" alt="MERCORP Organic Chickpea Crackers, gluten-free plant protein snack" class="w-full h-auto object-cover rounded-md mb-4 shadow-sm">
-                        <h3 class="text-2xl font-semibold text-[#1A2E5C] mb-2">Organic Chickpea Crackers</h3>
-                        <p class="text-sub mb-4">Packed with plant protein and fiber, these crispy crackers support digestive health and sustained energy.</p>
-                        <a href="#products" class="btn-primary inline-block">Learn More</a>
-                    </div>
-                    <!-- Product 3 -->
-                    <div class="bg-[#F4F1EC] rounded-xl shadow-lg overflow-hidden p-6 text-center">
-                        <img src="assets/images/organic-brown-rice-crackers-home.jpg" alt="MERCORP Organic Brown Rice Crackers, whole grain healthy snack" class="w-full h-auto object-cover rounded-md mb-4 shadow-sm">
-                        <h3 class="text-2xl font-semibold text-[#1A2E5C] mb-2">Organic Brown Rice Crackers</h3>
-                        <p class="text-sub mb-4">A wholesome source of fiber and B vitamins, perfect for guilt-free snacking anytime.</p>
-                        <a href="#products" class="btn-primary inline-block">Learn More</a>
-                    </div>
-                </div>
-                <a href="#products" class="btn-primary text-xl">Explore All Products</a>
-            </div>
-        </section>
-
-        <!-- Healthier Spotlight Section -->
-        <section class="py-16 md:py-24 bg-[#5A7D5A] text-white">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-8">Snacking Has Evolved: From Impulse Indulgence to Intentional Wellness</h2>
-                <p class="text-lg mb-12 max-w-4xl mx-auto">Today, nearly 60% of consumers actively seek healthier snack alternatives that support their fitness, nutrition, and lifestyle goals. The era of junk food is fading, replaced by better-for-you choices that fuel energy, boost well-being, and still satisfy cravings. In this spotlight, we explore six emerging snacking trends shaping healthier habits and why they matter more than ever.</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                    <div class="bg-[#1A2E5C] rounded-xl p-6 shadow-lg">
-                        <img src="assets/images/functional-nutrition.svg" alt="Functional Nutrition Icon" class="mx-auto mb-4 rounded">
-                        <h3 class="text-xl font-semibold mb-2">Functional Nutrition</h3>
-                        <p class="text-gray-300">Snacks infused with probiotics, adaptogens, or specific vitamins to support targeted health benefits.</p>
-                    </div>
-                    <div class="bg-[#1A2E5C] rounded-xl p-6 shadow-lg">
-                        <img src="assets/images/plant-based-power.svg" alt="Plant-Based Power Icon" class="mx-auto mb-4 rounded">
-                        <h3 class="text-xl font-semibold mb-2">Plant-Based Power</h3>
-                        <p class="text-gray-300">The growing demand for vegan and vegetarian options, rich in plant proteins and whole ingredients.</p>
-                    </div>
-                    <div class="bg-[#1A2E5C] rounded-xl p-6 shadow-lg">
-                        <img src="assets/images/clean-label-simplicity.svg" alt="Clean-Label Simplicity Icon" class="mx-auto mb-4 rounded">
-                        <h3 class="text-xl font-semibold mb-2">Clean-Label Simplicity</h3>
-                        <p class="text-gray-300">Consumers prioritizing transparent ingredient lists, free from artificial additives, GMOs, and unnecessary processing.</p>
-                    </div>
-                    <div class="bg-[#1A2E5C] rounded-xl p-6 shadow-lg">
-                        <img src="assets/images/gluten-free-innovation.svg" alt="Gluten-Free Innovation Icon" class="mx-auto mb-4 rounded">
-                        <h3 class="text-xl font-semibold mb-2">Gluten-Free Innovation</h3>
-                        <p class="text-gray-300">Beyond necessity, gluten-free options are now sought for perceived health benefits and wider appeal.</p>
-                    </div>
-                    <div class="bg-[#1A2E5C] rounded-xl p-6 shadow-lg">
-                        <img src="assets/images/sustainable-sourcing.svg" alt="Sustainable Sourcing Icon" class="mx-auto mb-4 rounded">
-                        <h3 class="text-xl font-semibold mb-2">Sustainable Sourcing</h3>
-                        <p class="text-gray-300">A focus on eco-friendly production, ethical supply chains, and transparent environmental practices.</p>
-                    </div>
-                    <div class="bg-[#1A2E5C] rounded-xl p-6 shadow-lg">
-                        <img src="assets/images/private-label-premiumization.svg" alt="Private Label Premiumization Icon" class="mx-auto mb-4 rounded">
-                        <h3 class="text-xl font-semibold mb-2">Private Label Premiumization</h3>
-                        <p class="text-gray-300">Brands seeking high-quality, certified products to build their own unique, healthy snack lines.</p>
-                    </div>
-                </div>
-                <a href="#services" class="btn-primary text-xl">Learn More About Our Services</a>
-            </div>
-        </section>
-
-        <!-- Why Partner With Us Section -->
-        <section class="py-16 md:py-24 bg-[#F4F1EC]">
-            <div class="container mx-auto px-4 text-center max-w-4xl">
-                <h2 class="text-3xl md:text-4xl section-header mb-8">At MERCORP™, We Do More Than Supply Ingredients – We Help Businesses Build Brands.</h2>
-                <p class="text-lg mb-12">Since 2019, we’ve proudly partnered with wholesale distributors, retailers, and manufacturers to deliver high-quality, private-label products that meet today’s demand for consistency, competitive pricing, and dependable logistics. Whether you’re scaling up or launching something new, MERCORP™ is your reliable source for premium B2B sourcing solutions.</p>
-                <a href="#about-us" class="btn-primary text-xl">About Us &gt;&gt;</a>
-            </div>
-        </section>
-
-        <!-- End Message / Call to Action Section -->
-        <section class="py-16 md:py-24 bg-white text-center">
-            <div class="container mx-auto px-4 max-w-4xl">
-                <h2 class="text-3xl md:text-4xl section-header mb-4">Ready to Grow with MERCORP™?</h2>
-                <p class="text-lg mb-8 text-sub">Let's discuss how our premium ingredients and tailored solutions can elevate your brand.</p>
-                <a href="#contact-us" class="btn-conversion text-xl">Contact Us Today</a>
-            </div>
-        </section>
-
-        <!-- 2. About Us Page Section -->
-        <section id="about-us" class="min-h-screen flex items-end justify-center relative text-white">
-            <!-- Hero Banner -->
-            <img src="assets/images/mercorp-about-us-hero.jpg"
-                 alt="MERCORP team collaborating on sustainable food sourcing"
-                 class="absolute inset-0 w-full h-full object-cover">
-            <div class="absolute inset-0 bg-black opacity-60"></div>
-            <div class="relative z-10 text-center px-4 pb-16 md:pb-24 max-w-3xl">
-                <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">Who We Are – Our Journey & Commitment</h1>
-                <p class="text-lg md:text-xl mx-auto">Building a healthier future, one partnership at a time.</p>
-            </div>
-        </section>
-
-        <!-- Our Story & Mission Section -->
-        <section class="py-16 md:py-24 bg-[#F4F1EC]">
-            <div class="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl md:text-4xl section-header mb-6">Building Trust Through Quality & Partnership</h2>
-                    <p class="text-lg mb-6 leading-relaxed">At MERCORP™, we are a trusted B2B partner committed to the meticulous sourcing and supply of premium private-label food products. Driven by a passion for healthier living, we empower wholesale distributors, retailers, and manufacturers worldwide with clean, functional, and ready-to-market solutions.</p>
-                    <p class="text-lg">Our foundation rests on nutrition expertise, uncompromising product consistency, customer-first service, and the delivery of scalable, wellness-driven products that meet the evolving demands of today's conscious consumer.</p>
-                </div>
-                <div class="relative flex justify-center items-center h-96 rounded-xl overflow-hidden shadow-lg">
-                    <img src="assets/images/our-story-image.jpg" alt="MERCORP team collaborating in office" class="w-full h-full object-cover rounded-xl">
-                </div>
-            </div>
-        </section>
-
-        <!-- Our Vision Section -->
-        <section class="py-16 md:py-24 bg-white text-center">
-            <div class="container mx-auto px-4 max-w-3xl">
-                <h2 class="text-3xl md:text-4xl section-header mb-6">Our Vision</h2>
-                <p class="text-lg md:text-xl">To be a globally trusted partner in delivering premium, healthier food solutions that support everyday wellness.</p>
-            </div>
-        </section>
-
-        <!-- Our Core Values & Driving Mission Section -->
-        <section class="py-16 md:py-24 bg-[#F4F1EC]">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="text-3xl md:text-4xl section-header mb-12">Our Core Values & Driving Mission</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="bg-white rounded-xl shadow-lg p-6">
-                        <img src="assets/images/mission.svg" alt="Mission Icon" class="mx-auto mb-4 rounded">
-                        <h3 class="text-xl font-semibold text-[#1A2E5C] mb-2">Our Mission</h3>
-                        <p class="text-sub">To lead the transformation of the food industry by providing innovative, reliable, and value-driven healthy food solutions, fostering long-term partnerships built on trust and shared success.</p>
-                    </div>
-                    <div class="bg-white rounded-xl shadow-lg p-6">
-                        <img src="assets/images/values.svg" alt="Values Icon" class="mx-auto mb-4 rounded">
-                        <h3 class="text-xl font-semibold text-[#1A2E5C] mb-2">Our Core Values</h3>
-                        <p class="text-sub">We operate with unwavering integrity, transparency, and a relentless dedication to quality. We are committed to building long-term partnerships and sustainable practices.</p>
-                    </div>
-                    <div class="bg-white rounded-xl p-6 shadow-lg">
-                        <img src="assets/images/expertise.svg" alt="Expertise Icon" class="mx-auto mb-4 rounded">
-                        <h3 class="text-xl font-semibold text-[#1A2E5C] mb-2">Our Expertise</h3>
-                        <p class="text-sub">Our strength lies in our deep expertise across global food sourcing, product development, quality assurance, and efficient supply chain management, ensuring seamless delivery.</p>
-                    </div>
-                    <div class="bg-white rounded-xl shadow-lg p-6">
-                        <img src="assets/images/team.svg" alt="Team Icon" class="mx-auto mb-4 rounded">
-                        <h3 class="text-xl font-semibold text-[#1A2E5C] mb-2">Our Dedicated Team</h3>
-                        <p class="text-sub">Behind MERCORP™ is a passionate team of sourcing specialists, quality assurance professionals, and logistics experts dedicated to delivering excellence and supporting your business growth.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Quality Commitment (Certifications) Section - About Us -->
-        <section class="py-16 md:py-24 bg-white">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="text-3xl md:text-4xl section-header mb-12">Unwavering Quality: Certified for Global Markets</h2>
-                <p class="text-lg mb-12 max-w-4xl mx-auto">At MERCORP™, our dedication to quality is unwavering, backed by a comprehensive suite of globally recognized certifications. These badges reflect our promise of safety, purity, and ethical production, ensuring every product meets the highest international standards demanded by our B2B partners.</p>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 text-left">
-                    <div class="bg-[#F4F1EC] rounded-xl shadow-lg p-6">
-                        <h3 class="text-2xl font-semibold text-[#1A2E5C] mb-4">Organic & Ecological Purity</h3>
-                        <div class="flex items-center space-x-4 mb-4">
-                            <!-- Changed to rounded-md for rectangular display -->
-                            <img src="assets/images/organic-certification-group.png" alt="Organic Certification Logos" class="w-20 h-20 rounded-md shadow-md p-2 bg-white">
-                            <p class="text-lg font-medium text-gray-700">EU Organic, Canada Organic, USDA Organic, IFOAM Organic</p>
+    <main>
+        <!-- Section 1: Hero Banner -->
+        <section class="relative w-full h-[70vh] swiper-container hero-slider">
+            <div class="swiper-wrapper">
+                <!-- Banner 1 -->
+                <div class="swiper-slide bg-cover bg-center" style="background-image: url('assets/images/mercorp-home-wholesome-crackers-healthy-lifestyle-banner-hero.jpg');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center text-center">
+                        <div class="max-w-4xl px-4 pb-16">
+                            <h1 class="text-3xl md:text-4xl font-extrabold text-[#EAEBD0]">Nourishing Futures, One Wholesome Bite.</h1>
+                            <a href="#" class="mt-8 inline-block bg-[#B89D62] text-[#2D241B] px-8 py-3 rounded-full font-bold uppercase hover:bg-[#A88A44] transition">Explore Products</a>
                         </div>
-                        <p class="text-sub">These certifications guarantee that our products are grown and processed without synthetic pesticides, fertilizers, or GMOs, adhering to strict organic farming and handling practices recognized worldwide.</p>
-                    </div>
-                    <div class="bg-[#F4F1EC] rounded-xl shadow-lg p-6">
-                        <h3 class="text-2xl font-semibold text-[#1A2E5C] mb-4">Food Safety & Manufacturing Excellence</h3>
-                        <div class="flex items-center space-x-4 mb-4">
-                            <!-- Changed to rounded-md for rectangular display -->
-                            <img src="assets/images/food-safety-certification-group.png" alt="Food Safety Certification Logos" class="w-20 h-20 rounded-md shadow-md p-2 bg-white">
-                            <p class="text-lg font-medium text-gray-700">HACCP, GMP</p>
-                        </div>
-                        <p class="text-sub">Our manufacturing facilities operate under stringent HACCP and GMP protocols, ensuring the highest levels of food safety, hygiene, and consistent product quality throughout every stage of production.</p>
-                    </div>
-                    <div class="bg-[#F4F1EC] rounded-xl shadow-lg p-6">
-                        <h3 class="text-2xl font-semibold text-[#1A2E5C] mb-4">Dietary & Ethical Compliance</h3>
-                        <div class="flex items-center space-x-4 mb-4">
-                            <!-- Changed to rounded-md for rectangular display -->
-                            <img src="assets/images/dietary-ethical-compliance-group.png" alt="Dietary and Ethical Certification Logos" class="w-20 h-20 rounded-md shadow-md p-2 bg-white">
-                            <p class="text-lg font-medium text-gray-700">Halal, Vegan</p>
-                        </div>
-                        <p class="text-sub">Our Halal certification ensures compliance with Islamic dietary laws, making our products suitable for Middle Eastern markets. Our vegan offerings cater to plant-based diets, reflecting our commitment to diverse consumer needs.</p>
-                    </div>
-                    <div class="bg-[#F4F1EC] rounded-xl shadow-lg p-6">
-                        <h3 class="text-2xl font-semibold text-[#1A2E5C] mb-4">Pure Ingredients & Free-From Assurances</h3>
-                        <div class="flex items-center space-x-4 mb-4">
-                            <!-- Changed to rounded-md for rectangular display -->
-                            <img src="assets/images/pure-ingredients-free-from-assurances-group.png" alt="Free-From Certification Logos" class="w-20 h-20 rounded-md shadow-md p-2 bg-white">
-                            <p class="text-lg font-medium text-gray-700">GMO-Free, Gluten-Free, Palm Oil Free</p>
-                        </div>
-                        <p class="text-sub">We guarantee our products are free from genetically modified organisms, gluten, and palm oil, addressing key consumer concerns for clean-label, allergen-friendly, and environmentally responsible options.</p>
                     </div>
                 </div>
-                <div class="mt-12">
-                    <a href="#" class="btn-primary text-xl">Download Our Certifications Overview</a>
+                <!-- Banner 2 -->
+                <div class="swiper-slide bg-cover bg-center" style="background-image: url('assets/images/mercorp-home-business-partnership-strategic-growth-banner-hero.jpg');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center text-center">
+                        <div class="max-w-4xl px-4 pb-16">
+                            <h1 class="text-3xl md:text-4xl font-extrabold text-[#EAEBD0]">Innovating Partnerships for Sustainable Growth.</h1>
+                            <a href="#" class="mt-8 inline-block bg-[#B89D62] text-[#2D241B] px-8 py-3 rounded-full font-bold uppercase hover:bg-[#A88A44] transition">Discover Our Services</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Banner 3 -->
+                <div class="swiper-slide bg-cover bg-center" style="background-image: url('assets/images/mercorp-home-sustainable-innovation-agricultural-solutions-hero.jpg');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center text-center">
+                        <div class="max-w-4xl px-4 pb-16">
+                            <h1 class="text-3xl md:text-4xl font-extrabold text-[#EAEBD0]">Driving Progress for a Healthier Planet.</h1>
+                            <a href="#" class="mt-8 inline-block bg-[#B89D62] text-[#2D241B] px-8 py-3 rounded-full font-bold uppercase hover:bg-[#A88A44] transition">Learn About Our Vision</a>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <!-- Slider Navigation -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-pagination"></div>
         </section>
 
-        <!-- 3. Products Page Section -->
-        <section id="products" class="min-h-screen flex items-end justify-center relative text-white">
-            <!-- Hero Banner -->
-            <img src="assets/images/mercorp-products-hero.jpg"
-                 alt="Assortment of MERCORP organic rice and legume crackers, ready for distribution"
-                 class="absolute inset-0 w-full h-full object-cover">
-            <div class="absolute inset-0 bg-black opacity-60"></div>
-            <div class="relative z-10 text-center px-4 pb-16 md:pb-24 max-w-3xl">
-                <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">Discover Our Range of Health-Driven Products</h1>
-                <p class="text-lg md:text-xl mx-auto">Crafted for wellness, designed for your market.</p>
+        <!-- Section 2: Quality Commitment -->
+        <section class="py-16 sm:py-24">
+            <div class="container mx-auto text-center px-6">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-[#2D241B]">OUR COMMITMENT TO EXCELLENCE.</h2>
+                <p class="mt-4 max-w-3xl mx-auto text-[#474747]">We proudly adhere to the highest international standards, ensuring premium quality and integrity across all our products and services.</p>
+            </div>
+            <div class="mt-12 w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)] scroller">
+                <ul class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll scroller-track">
+                    <!-- Logos repeated for seamless scroll -->
+                    <li><img src="assets/images/eu-organic-certified-logo.svg" alt="eu organic certified logo for mercorp products." class="h-20"></li>
+                    <li><img src="assets/images/usda-organic-certified-logo.svg" alt="usda organic certified logo for mercorp products." class="h-20"></li>
+                    <li><img src="assets/images/canada-organic-certified-logo.svg" alt="canada organic certified logo for mercorp products." class="h-20"></li>
+                    <li><img src="assets/images/ifoam-organic-certified-logo.svg" alt="ifoam organic certified logo for mercorp products." class="h-20"></li>
+                    <li><img src="assets/images/halal-certified-product-logo.svg" alt="halal certified product for mercorp products." class="h-20"></li>
+                    <li><img src="assets/images/vegan-certified-logo.svg" alt="vegan certified logo for mercorp products." class="h-20"></li>
+                    <li><img src="assets/images/gmp-certified-logo.svg" alt="gmp (good manufacturing practices) certified logo for mercorp products." class="h-20"></li>
+                    <li><img src="assets/images/haccp-certified-logo.svg" alt="haccp (hazard analysis critical control point) certified logo for mercorp products." class="h-20"></li>
+                    <li><img src="assets/images/non-gmo-project-verified-logo.svg" alt="non-gmo project verified logo for mercorp products." class="h-20"></li>
+                    <li><img src="assets/images/gluten-free-certified-logo.svg" alt="gluten-free certified logo for mercorp products." class="h-20"></li>
+                    <li><img src="assets/images/palm-oil-free-certified-logo.svg" alt="palm oil free product logo for mercorp products." class="h-20"></li>
+                    <!-- Repeat for loop -->
+                    <li><img src="assets/images/eu-organic-certified-logo.svg" alt="eu organic certified logo for mercorp products." class="h-20"></li>
+                    <li><img src="assets/images/usda-organic-certified-logo.svg" alt="usda organic certified logo for mercorp products." class="h-20"></li>
+                    <li><img src="assets/images/canada-organic-certified-logo.svg" alt="canada organic certified logo for mercorp products." class="h-20"></li>
+                    <li><img src="assets/images/ifoam-organic-certified-logo.svg" alt="ifoam organic certified logo for mercorp products." class="h-20"></li>
+                    <li><img src="assets/images/halal-certified-product-logo.svg" alt="halal certified product for mercorp products." class="h-20"></li>
+                    <li><img src="assets/images/vegan-certified-logo.svg" alt="vegan certified logo for mercorp products." class="h-20"></li>
+                    <li><img src="assets/images/gmp-certified-logo.svg" alt="gmp (good manufacturing practices) certified logo for mercorp products." class="h-20"></li>
+                    <li><img src="assets/images/haccp-certified-logo.svg" alt="haccp (hazard analysis critical control point) certified logo for mercorp products." class="h-20"></li>
+                    <li><img src="assets/images/non-gmo-project-verified-logo.svg" alt="non-gmo project verified logo for mercorp products." class="h-20"></li>
+                    <li><img src="assets/images/gluten-free-certified-logo.svg" alt="gluten-free certified logo for mercorp products." class="h-20"></li>
+                    <li><img src="assets/images/palm-oil-free-certified-logo.svg" alt="palm oil free product logo for mercorp products." class="h-20"></li>
+                </ul>
             </div>
         </section>
 
-        <!-- Product Philosophy Section -->
-        <section class="py-16 md:py-24 bg-[#F4F1EC]">
-            <div class="container mx-auto px-4 text-center max-w-4xl">
-                <h2 class="text-3xl md:text-4xl section-header mb-8">Premium Quality, Baked for Better Health</h2>
-                <p class="text-lg">At MERCORP™, we offer a diverse portfolio of premium, healthier food products designed to meet the evolving demands of today's conscious consumers and support your market needs. From wholesome snacks to versatile ingredients, each item is crafted with uncompromising quality and a commitment to wellness. All our snacks are baked, not fried, ensuring a lighter, healthier crunch with no deep-frying involved.</p>
-            </div>
-        </section>
-
-        <!-- Product Categories Section -->
-        <section class="py-16 md:py-24 bg-white">
-            <div class="container mx-auto px-4">
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Section 3: Featured Products -->
+        <section class="py-16 sm:py-24 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-[#2D241B]">CRAFTED FOR YOUR HEALTH & TASTE.</h2>
+                <p class="mt-4 max-w-3xl mx-auto text-[#474747]">Indulge in our exquisite selection of organic, baked crackers, made with premium ingredients and free from common allergens.</p>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
                     <!-- Product Card 1 -->
-                    <div class="bg-[#F4F1EC] rounded-xl shadow-lg overflow-hidden p-6 text-center">
-                        <img src="assets/images/organic-black-rice.jpg" alt="MERCORP Organic Black Rice Crackers, original flavor" class="w-full h-auto object-cover rounded-md mb-4 shadow-sm">
-                        <h3 class="text-2xl font-semibold text-[#1A2E5C] mb-2">Organic Black Rice Crackers</h3>
-                        <p class="text-sub mb-4">Nutrient-dense and antioxidant-rich, offering a unique crisp with a slightly nutty flavor.</p>
-                        <a href="#product-black-rice" class="btn-primary inline-block">Learn More</a>
+                    <div class="bg-[#F4F1EC] rounded-lg shadow-md overflow-hidden group">
+                        <img src="assets/images/mercorp-black-rice-crackers-60g-600px.jpg" alt="Mercorp Organic Black Rice Crackers 60g pack" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-[#2D241B]">Organic Black Rice Crackers</h3>
+                            <p class="text-[#474747] mt-2 mb-4">Experience the rich, distinctive flavor of black rice, baked to crispy perfection for a truly unique and wholesome snack.</p>
+                            <a href="#" class="font-bold text-[#3B3418] hover:text-[#B89D62]">Learn More <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
+                        </div>
                     </div>
                     <!-- Product Card 2 -->
-                    <div class="bg-[#F4F1EC] rounded-xl shadow-lg overflow-hidden p-6 text-center">
-                        <img src="assets/images/organic-brown-rice.jpg" alt="MERCORP Organic Brown Rice Crackers, whole grain snack" class="w-full h-auto object-cover rounded-md mb-4 shadow-sm">
-                        <h3 class="text-2xl font-semibold text-[#1A2E5C] mb-2">Organic Brown Rice Crackers</h3>
-                        <p class="text-sub mb-4">A wholesome source of fiber and B vitamins, perfect for guilt-free snacking anytime.</p>
-                        <a href="#product-brown-rice" class="btn-primary inline-block">Learn More</a>
+                    <div class="bg-[#F4F1EC] rounded-lg shadow-md overflow-hidden group">
+                        <img src="assets/images/mercorp-chickpea-crackers-60g-600px.jpg" alt="Mercorp Organic Chickpea Crackers 60g pack" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-[#2D241B]">Organic Chickpea Crackers</h3>
+                            <p class="text-[#474747] mt-2 mb-4">Savor the plant-powered goodness of chickpeas in every crunchy bite. A delicious, protein-rich alternative for conscious snacking.</p>
+                            <a href="#" class="font-bold text-[#3B3418] hover:text-[#B89D62]">Learn More <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
+                        </div>
                     </div>
                     <!-- Product Card 3 -->
-                    <div class="bg-[#F4F1EC] rounded-xl shadow-lg overflow-hidden p-6 text-center">
-                        <img src="assets/images/organic-white-rice.jpg" alt="MERCORP Organic White Rice Crackers, light and crispy" class="w-full h-auto object-cover rounded-md mb-4 shadow-sm">
-                        <h3 class="text-2xl font-semibold text-[#1A2E5C] mb-2">Organic White Rice Crackers</h3>
-                        <p class="text-sub mb-4">Light, crispy, and subtly sweet, these crackers are a delightful and healthy alternative for any meal or snack.</p>
-                        <a href="#product-white-rice" class="btn-primary inline-block">Learn More</a>
-                    </div>
-                    <!-- Product Card 4 -->
-                    <div class="bg-[#F4F1EC] rounded-xl shadow-lg overflow-hidden p-6 text-center">
-                        <img src="assets/images/organic-chickpea.jpg" alt="MERCORP Organic Chickpea Crackers, high protein gluten-free" class="w-full h-auto object-cover rounded-md mb-4 shadow-sm">
-                        <h3 class="text-2xl font-semibold text-[#1A2E5C] mb-2">Organic Chickpea Crackers</h3>
-                        <p class="text-sub mb-4">Packed with plant protein and folate, these crispy crackers support digestive health and sustained energy.</p>
-                        <a href="#product-chickpea" class="btn-primary inline-block">Learn More</a>
-                    </div>
-                    <!-- Product Card 5 -->
-                    <div class="bg-[#F4F1EC] rounded-xl shadow-lg overflow-hidden p-6 text-center">
-                        <img src="assets/images/organic-mung-bean.jpg" alt="MERCORP Organic Mung Bean Crackers, nutritious legume snack" class="w-full h-auto object-cover rounded-md mb-4 shadow-sm">
-                        <h3 class="text-2xl font-semibold text-[#1A2E5C] mb-2">Organic Mung Bean Crackers</h3>
-                        <p class="text-sub mb-4">A superb source of slow-releasing carbs and antioxidants, these crackers offer sustained energy and unique flavor.</p>
-                        <a href="#product-mung-bean" class="btn-primary inline-block">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Product Quality Assurance Section -->
-        <section class="py-16 md:py-24 bg-[#F4F1EC]">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="text-3xl md:text-4xl section-header mb-8">Our Unwavering Commitment to Global Quality Standards</h2>
-                <p class="text-lg mb-12 max-w-4xl mx-auto">Every product from MERCORP™ is a testament to our strict adherence to international quality and safety benchmarks. We ensure that our entire production process, from sourcing to packaging, meets the highest industry standards.</p>
-                <!-- Animated Certification Logos - Product Page -->
-                <div class="certification-scroll-container mb-12">
-                    <div class="certification-scroll-wrapper">
-                        <!-- Duplicate the logos once for seamless loop -->
-                        <img src="assets/images/eu-organic.png" alt="EU Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/canada-organic.png" alt="Canada Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/usda-organic.png" alt="USDA Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/ifoam-organic.png" alt="IFOAM Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/halal.png" alt="Halal Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/haccp.png" alt="HACCP Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/gmp.png" alt="GMP Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/gmo-free.png" alt="GMO Free Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/gluten-free.png" alt="Gluten Free Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/palm-oil-free.png" alt="Palm Oil Free Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/vegan.png" alt="Vegan Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-
-                        <!-- Duplicate set of logos -->
-                        <img src="assets/images/eu-organic.png" alt="EU Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/canada-organic.png" alt="Canada Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/usda-organic.png" alt="USDA Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/ifoam-organic.png" alt="IFOAM Organic Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/halal.png" alt="Halal Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/haccp.png" alt="HACCP Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/gmp.png" alt="GMP Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/gmo-free.png" alt="GMO Free Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/gluten-free.png" alt="Gluten Free Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/palm-oil-free.png" alt="Palm Oil Free Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                        <img src="assets/images/vegan.png" alt="Vegan Certified" class="w-24 h-24 rounded-full shadow-md p-2 bg-white flex-shrink-0">
-                    </div>
-                </div>
-                <!-- Removed CTA button -->
-                <!-- <a href="#about-us" class="btn-primary text-xl">Learn More About Our Certifications</a> -->
-            </div>
-        </section>
-
-        <!-- Product Catalog Download -->
-        <section class="py-16 md:py-24 bg-white text-center">
-            <div class="container mx-auto px-4 max-w-4xl">
-                <h3 class="text-3xl section-header mb-4">Get Our Complete Product Catalog</h3>
-                <p class="text-lg mb-8 text-sub">Explore our full range, detailed specifications, and packaging options.</p>
-                <a href="#" class="btn-primary text-xl">Download Catalog</a>
-            </div>
-        </section>
-
-        <!-- Individual Product Page Template (Example for Black Rice Crackers) -->
-        <section id="product-black-rice" class="py-16 md:py-24 bg-[#F4F1EC]">
-            <div class="container mx-auto px-4">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-                    <!-- Product Image & Basic Info -->
-                    <div>
-                        <h1 class="text-4xl md:text-5xl font-bold text-[#1A2E5C] mb-6">Organic Black Rice Crackers (Original)</h1>
-                        <img src="assets/images/organic-black-rice-crackers-detail.jpg"
-                             alt="MERCORP Organic Black Rice Crackers, close up of texture and packaging"
-                             class="w-full h-auto object-cover rounded-xl shadow-lg mb-6">
-                        <div class="flex flex-wrap gap-4 justify-center md:justify-start mb-6">
-                            <!-- Relevant Product Badges -->
-                            <img src="assets/images/eu-organic.png" alt="EU Organic Certified" class="w-16 h-16 rounded-full shadow-md p-1 bg-white">
-                            <img src="assets/images/usda-organic.png" alt="USDA Organic Certified" class="w-16 h-16 rounded-full shadow-md p-1 bg-white">
-                            <img src="assets/images/halal.png" alt="Halal Certified" class="w-16 h-16 rounded-full shadow-md p-1 bg-white">
-                            <img src="assets/images/gluten-free.png" alt="Gluten Free Certified" class="w-16 h-16 rounded-full shadow-md p-1 bg-white">
-                            <img src="assets/images/gmo-free.png" alt="GMO Free Certified" class="w-16 h-16 rounded-full shadow-md p-1 bg-white">
-                        </div>
-                    </div>
-                    <!-- Product Details -->
-                    <div>
-                        <p class="text-lg leading-relaxed mb-6">Indulge in the unique taste and powerful benefits of our Organic Black Rice Crackers. Crafted from premium organic black rice, these crackers are baked to perfection, offering a crispy texture with a subtle, earthy flavor. Rich in antioxidants and essential nutrients, they are a delicious and guilt-free snack for any time of day.</p>
-
-                        <h2 class="text-2xl font-semibold text-[#1A2E5C] mb-4">Product Specifications</h2>
-                        <ul class="list-disc list-inside space-y-2 text-lg mb-6">
-                            <li><strong>Ingredients:</strong> Organic Black Rice Flour 94.1%, Organic Sunflower Oil 5%, Organic Natural Sea Salt 0.9%</li>
-                            <li><strong>Allergens:</strong> Produced on equipment that also processes soy, sesame, and milk.</li>
-                            <li><strong>Package Options:</strong> Available in 60g and 115g retail packs.</li>
-                            <li><strong>Flavors:</strong> Original, BBQ, Salt & Vinegar, Sour Cream, Cheese, Seaweed</li>
-                            <li><strong>Storage:</strong> Keep in an airtight container after opening to maintain freshness and crunch.</li>
-                            <li><strong>Origin:</strong> Product of Thailand</li>
-                        </ul>
-
-                        <h3 class="text-2xl font-semibold text-[#1A2E5C] mb-4">Nutritional Information (Per 100g)</h3>
-                        <!-- Developer Note: Implement NutritionInformation Schema Markup for this table -->
-                        <div class="overflow-x-auto mb-6 bg-white rounded-md shadow-inner">
-                            <table class="w-full text-left table-auto">
-                                <thead class="bg-[#5A7D5A] text-white">
-                                    <tr>
-                                        <th class="p-3 whitespace-nowrap rounded-tl-md">Average Quantity Per</th>
-                                        <th class="p-3 whitespace-nowrap">Per Serving (12.5g)</th>
-                                        <th class="p-3 whitespace-nowrap rounded-tr-md">Per 100g</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="border-b border-divider">
-                                        <td class="p-3">Energy (kJ / kcal)</td>
-                                        <td class="p-3">198 kJ / 47 kcal</td>
-                                        <td class="p-3">1590 kJ / 380 kcal</td>
-                                    </tr>
-                                    <tr class="border-b border-divider">
-                                        <td class="p-3">Protein (g)</td>
-                                        <td class="p-3">0.9 g</td>
-                                        <td class="p-3">6.8 g</td>
-                                    </tr>
-                                    <tr class="border-b border-divider">
-                                        <td class="p-3">- gluten (g)</td>
-                                        <td class="p-3">0 g</td>
-                                        <td class="p-3">0 g</td>
-                                    </tr>
-                                    <tr class="border-b border-divider">
-                                        <td class="p-3">Fat, total (g)</td>
-                                        <td class="p-3">1.0 g</td>
-                                        <td class="p-3">7.6 g</td>
-                                    </tr>
-                                    <tr class="border-b border-divider">
-                                        <td class="p-3">- saturated (g)</td>
-                                        <td class="p-3">0.1 g</td>
-                                        <td class="p-3">1.2 g</td>
-                                    </tr>
-                                    <tr class="border-b border-divider">
-                                        <td class="p-3">- trans (g)</td>
-                                        <td class="p-3">0 g</td>
-                                        <td class="p-3">0 g</td>
-                                    </tr>
-                                    <tr class="border-b border-divider">
-                                        <td class="p-3">Carbohydrate (g)</td>
-                                        <td class="p-3">8.5 g</td>
-                                        <td class="p-3">67.9 g</td>
-                                    </tr>
-                                    <tr class="border-b border-divider">
-                                        <td class="p-3">- sugars (g)</td>
-                                        <td class="p-3">0.1 g</td>
-                                        <td class="p-3">0.8 g</td>
-                                    </tr>
-                                    <tr class="border-b border-divider">
-                                        <td class="p-3">Dietary Fibre (g)</td>
-                                        <td class="p-3">0.5 g</td>
-                                        <td class="p-3">4.4 g</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="p-3 rounded-bl-md">Salt (g)</td>
-                                        <td class="p-3">0.062 g</td>
-                                        <td class="p-3 rounded-br-md">0.495 g</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <p class="text-sm text-sub mt-4"><em>Nutritional values are based on a standard serving size of 12.5g unless otherwise specified. These values are estimated from internal laboratory analysis and may be subject to updates. For official labeling or compliance purposes, please refer to the actual product packaging or contact us at <a href="mailto:info@mercorp.co.th" class="text-[#1A2E5C] underline hover:text-[#D4A574]">info@mercorp.co.th</a>.</em></p>
-
-                        <div class="mt-8 text-center md:text-left">
-                            <a href="#contact-us" class="btn-conversion text-xl">Request a Sample</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Suggested Products -->
-                <div class="mt-16 pt-16 border-t border-divider">
-                    <h2 class="text-3xl md:text-4xl section-header mb-8 text-center">You May Also Be Interested In:</h2>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-                        <!-- Placeholder for related product images/links -->
-                        <div class="text-center bg-white rounded-lg shadow-md p-4">
-                            <img src="assets/images/organic-brown-rice.jpg" alt="Related Product: Organic Brown Rice Crackers" class="w-full h-auto rounded-md mb-2">
-                            <p class="font-semibold text-[#1A2E5C] mb-2">Organic Brown Rice Crackers</p>
-                            <a href="#product-brown-rice" class="text-[#D4A574] hover:underline text-sm">View Product</a>
-                        </div>
-                        <div class="text-center bg-white rounded-lg shadow-md p-4">
-                            <img src="assets/images/organic-white-rice.jpg" alt="Related Product: Organic White Rice Crackers" class="w-full h-auto rounded-md mb-2">
-                            <p class="font-semibold text-[#1A2E5C] mb-2">Organic White Rice Crackers</p>
-                            <a href="#product-white-rice" class="text-[#D4A574] hover:underline text-sm">View Product</a>
-                        </div>
-                        <div class="text-center bg-white rounded-lg shadow-md p-4">
-                            <img src="assets/images/organic-chickpea.jpg" alt="Related Product: Organic Chickpea Crackers" class="w-full h-auto rounded-md mb-2">
-                            <p class="font-semibold text-[#1A2E5C] mb-2">Organic Chickpea Crackers</p>
-                            <a href="#product-chickpea" class="text-[#D4A574] hover:underline text-sm">View Product</a>
-                        </div>
-                        <div class="text-center bg-white rounded-lg shadow-md p-4">
-                            <img src="assets/images/organic-mung-bean.jpg" alt="Related Product: Organic Mung Bean Crackers" class="w-full h-auto rounded-md mb-2">
-                            <p class="font-semibold text-[#1A2E5C] mb-2">Organic Mung Bean Crackers</p>
-                            <a href="#product-mung-bean" class="text-[#D4A574] hover:underline text-sm">View Product</a>
-                        </div>
-                        <div class="text-center bg-white rounded-lg shadow-md p-4">
-                            <img src="assets/images/organic-black-rice.jpg" alt="Related Product: Organic Black Rice Crackers" class="w-full h-auto rounded-md mb-2">
-                            <p class="font-semibold text-[#1A2E5C] mb-2">Organic Black Rice Crackers</p>
-                            <a href="#product-black-rice" class="text-[#D4A574] hover:underline text-sm">View Product</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- 4. Services Page Section -->
-        <section id="services" class="min-h-screen flex items-end justify-center relative text-white">
-            <!-- Hero Banner -->
-            <img src="assets/images/mercorp-services-hero.jpg"
-                 alt="MERCORP team discussing private label food manufacturing and supply chain"
-                 class="absolute inset-0 w-full h-full object-cover">
-            <div class="absolute inset-0 bg-black opacity-60"></div>
-            <div class="relative z-10 text-center px-4 pb-16 md:pb-24 max-w-3xl">
-                <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">Your Partner for Comprehensive Food Solutions</h1>
-                <p class="text-lg md:text-xl mx-auto">Empowering your brand with expert OEM, sourcing, and trading services.</p>
-            </div>
-        </section>
-
-        <!-- Services Introduction -->
-        <section class="py-16 md:py-24 bg-[#F4F1EC]">
-            <div class="container mx-auto px-4 text-center max-w-5xl">
-                <h2 class="text-3xl md:text-4xl section-header mb-8">Full-Service Support for Global Food Brands</h2>
-                <p class="text-lg mb-12">At MERCORP™, we provide full-service support to help food brands thrive whether you’re developing your own line, sourcing premium ingredients, or expanding into new markets. Our OEM, sourcing, and trading services are designed to be flexible, scalable, and always aligned with health-conscious and quality-driven expectations. We bridge the gap between product vision and market reality, ensuring efficiency and excellence at every step.</p>
-            </div>
-        </section>
-
-        <!-- Core Service Offerings Section -->
-        <section class="py-16 md:py-24 bg-white">
-            <div class="container mx-auto px-4">
-                <div class="space-y-16">
-                    <!-- OEM Service -->
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-                        <div>
-                            <h3 class="text-3xl font-semibold text-[#1A2E5C] mb-4">OEM (Original Equipment Manufacturing): Your Brand, Our Expertise</h3>
-                            <p class="text-lg mb-6 leading-relaxed">Transform your vision into a market-ready product with our comprehensive OEM services. We handle everything from formulation to packaging, offering full private-label support. Benefit from our scalable manufacturing capabilities, access to clean ingredients, and flexible formats to bring your unique healthy snack line to life, all under your brand.</p>
-                            <ul class="list-disc list-inside space-y-2 text-lg text-sub mb-6">
-                                <li>Custom Product Development & Formulation</li>
-                                <li>Private Label Production & Packaging</li>
-                                <li>Certified Manufacturing Facilities (HACCP, GMP)</li>
-                                <li>Scalable Production for Any Volume</li>
-                                <li>Access to Organic, Gluten-Free, and Health-Focused Ingredients</li>
-                            </ul>
-                            <a href="#contact-us?subject=OEM Inquiry" class="btn-primary inline-block">Explore OEM Solutions</a>
-                        </div>
-                        <div class="relative flex justify-center items-center h-80 lg:h-full rounded-xl overflow-hidden shadow-lg">
-                            <img src="assets/images/oem-service-image.jpg" alt="OEM private label food manufacturing process at MERCORP" class="w-full h-full object-cover rounded-xl">
-                        </div>
-                    </div>
-
-                    <!-- Sourcing Service -->
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-                        <div class="relative flex justify-center items-center h-80 lg:h-full rounded-xl overflow-hidden shadow-lg order-2 lg:order-1">
-                            <img src="assets/images/sourcing-service-image.jpg" alt="MERCORP global food ingredient sourcing network" class="w-full h-full object-cover rounded-xl">
-                        </div>
-                        <div class="order-1 lg:order-2">
-                            <h3 class="text-3xl font-semibold text-[#1A2E5C] mb-4">Sourcing: Trusted Ingredients, Reliable Supply</h3>
-                            <p class="text-lg mb-6 leading-relaxed">Navigate the complexities of global ingredient sourcing with MERCORP™. Leveraging our extensive network, we provide access to high-quality, health-focused food ingredients from certified origins. We prioritize consistency, transparency, and efficiency to ensure a stable and reliable supply chain for your manufacturing needs.</p>
-                            <ul class="list-disc list-inside space-y-2 text-lg text-sub mb-6">
-                                <li>Global Network of Certified Suppliers</li>
-                                <li>Quality-Controlled Ingredient Procurement</li>
-                                <li>Focus on Organic, Sustainable, and Healthy Ingredients</li>
-                                <li>Ensured Supply Chain Transparency</li>
-                                <li>Competitive Pricing & Efficient Logistics</li>
-                            </ul>
-                            <a href="#contact-us?subject=Sourcing Inquiry" class="btn-primary inline-block">Request Sourcing Assistance</a>
-                        </div>
-                    </div>
-
-                    <!-- Trading Service -->
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-                        <div>
-                            <h3 class="text-3xl font-semibold text-[#1A2E5C] mb-4">Trading: Global Reach, Local Insight</h3>
-                            <p class="text-lg mb-6 leading-relaxed">As experienced food traders, we bridge buyers and sellers across continents, facilitating smooth cross-border trade of premium food products. From documentation to logistics, we manage the entire trading process, ensuring full compliance, secure transactions, and timely delivery to your desired markets in Europe, the Middle East, and South Asia.</p>
-                            <ul class="list-disc list-inside space-y-2 text-lg text-sub mb-6">
-                                <li>Expert International Trade Facilitation</li>
-                                <li>Comprehensive Documentation & Compliance Management</li>
-                                <li>Efficient Global Logistics & Shipping</li>
-                                <li>Market Access in Europe, Middle East & South Asia</li>
-                                <li>Risk Mitigation & Secure Transactions</li>
-                            </ul>
-                            <a href="#contact-us?subject=Trading Inquiry" class="btn-primary inline-block">Discuss Trading Opportunities</a>
-                        </div>
-                        <div class="relative flex justify-center items-center h-80 lg:h-full rounded-xl overflow-hidden shadow-lg">
-                            <img src="assets/images/trading-service-image.jpg" alt="MERCORP international food trade and distribution" class="w-full h-full object-cover rounded-xl">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Partnership Process Section -->
-        <section class="py-16 md:py-24 bg-[#F4F1EC]">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="text-3xl md:text-4xl section-header mb-8">Your Journey with MERCORP™</h2>
-                <p class="text-lg mb-12 max-w-4xl mx-auto">We believe in clear, collaborative processes that ensure your project’s success. Here’s how we partner with you:</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
-                    <div class="bg-white rounded-xl shadow-lg p-6">
-                        <div class="text-5xl font-bold text-[#D4A574] mb-4">1</div>
-                        <h3 class="text-xl font-semibold text-[#1A2E5C] mb-2">Initial Consultation</h3>
-                        <p class="text-sub">We listen to your needs, objectives, and market aspirations.</p>
-                    </div>
-                    <div class="bg-white rounded-xl shadow-lg p-6">
-                        <div class="text-5xl font-bold text-[#D4A574] mb-4">2</div>
-                        <h3 class="text-xl font-semibold text-[#1A2E5C] mb-2">Project Planning & Development</h3>
-                        <p class="text-sub">Collaborative design, formulation, and sample creation tailored to your vision.</p>
-                    </div>
-                    <div class="bg-white rounded-xl shadow-lg p-6">
-                        <div class="text-5xl font-bold text-[#D4A574] mb-4">3</div>
-                        <h3 class="text-xl font-semibold text-[#1A2E5C] mb-2">Production & Quality Assurance</h3>
-                        <p class="text-sub">Scalable manufacturing under strict quality controls and certifications.</p>
-                    </div>
-                    <div class="bg-white rounded-xl shadow-lg p-6">
-                        <div class="text-5xl font-bold text-[#D4A574] mb-4">4</div>
-                        <h3 class="text-xl font-semibold text-[#1A2E5C] mb-2">Logistics & Delivery</h3>
-                        <p class="text-sub">Efficient and reliable global shipping to your destination.</p>
-                    </div>
-                    <div class="bg-white rounded-xl shadow-lg p-6">
-                        <div class="text-5xl font-bold text-[#D4A574] mb-4">5</div>
-                        <h3 class="text-xl font-semibold text-[#1A2E5C] mb-2">Ongoing Support</h3>
-                        <p class="text-sub">Continuous partnership and support for future growth and market adaptation.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services Guide Download -->
-        <section class="py-16 md:py-24 bg-white text-center">
-            <div class="container mx-auto px-4 max-w-4xl">
-                <h3 class="text-3xl section-header mb-4">Download Our Comprehensive Services Guide</h3>
-                <p class="text-lg mb-8 text-sub">Explore how MERCORP™ can support your brand's growth and success.</p>
-                <a href="#" class="btn-primary text-xl">Download Services Guide</a>
-            </div>
-        </section>
-
-        <!-- 5. Blog Page Section -->
-        <section id="blog" class="min-h-screen flex items-end justify-center relative text-white">
-            <!-- Hero Banner -->
-            <img src="assets/images/mercorp-blog-hero.jpg"
-                 alt="MERCORP blog insights on healthy food trends and market analysis"
-                 class="absolute inset-0 w-full h-full object-cover">
-            <div class="absolute inset-0 bg-black opacity-60"></div>
-            <div class="relative z-10 text-center px-4 pb-16 md:pb-24 max-w-3xl">
-                <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">Insights for a Healthier Tomorrow</h1>
-                <p class="text-lg md:text-xl mx-auto">Expert perspectives on food innovation, wellness, and market trends.</p>
-            </div>
-        </section>
-
-        <!-- Blog Introduction & Search -->
-        <section class="py-16 md:py-24 bg-[#F4F1EC]">
-            <div class="container mx-auto px-4 text-center max-w-5xl">
-                <h2 class="text-3xl md:text-4xl section-header mb-8">Your Resource for Food Industry Insights</h2>
-                <p class="text-lg mb-8">Explore our latest thoughts on food innovation, ingredient trends, wellness lifestyles, and what it means to eat better at every age. From functional ingredients to global snacking shifts, our blog brings you expert insights, backed by real-world experience to help your business stay ahead.</p>
-                <div class="w-full max-w-lg mx-auto mb-12">
-                    <input type="text" placeholder="Search Blog Posts..." class="w-full p-3 rounded-full border border-[#D9DDD8] focus:border-[#D4A574] focus-ring-gold shadow-sm text-[#2E2E2E]">
-                </div>
-                <h3 class="text-2xl font-semibold text-[#1A2E5C] mb-6">Explore by Category:</h3>
-                <div class="flex flex-wrap justify-center gap-3">
-                    <button class="bg-[#D4A574] text-white px-5 py-2 rounded-full text-lg hover:bg-[#c09163] transition-colors shadow">Healthier Trends</button>
-                    <button class="bg-[#D4A574] text-white px-5 py-2 rounded-full text-lg hover:bg-[#c09163] transition-colors shadow">Ingredients Spotlight</button>
-                    <button class="bg-[#D4A574] text-white px-5 py-2 rounded-full text-lg hover:bg-[#c09163] transition-colors shadow">Lifestyle & Wellness</button>
-                    <button class="bg-[#D4A574] text-white px-5 py-2 rounded-full text-lg hover:bg-[#c09163] transition-colors shadow">Food & Culture</button>
-                    <button class="bg-[#D4A574] text-white px-5 py-2 rounded-full text-lg hover:bg-[#c09163] transition-colors shadow">Cooking & Recipes</button>
-                    <button class="bg-[#D4A574] text-white px-5 py-2 rounded-full text-lg hover:bg-[#c09163] transition-colors shadow">Healthy Aging</button>
-                    <button class="bg-[#D4A574] text-white px-5 py-2 rounded-full text-lg hover:bg-[#c09163] transition-colors shadow">B2B Insights</button>
-                    <button class="bg-[#D4A574] text-white px-5 py-2 rounded-full text-lg hover:bg-[#c09163] transition-colors shadow">Certifications & Compliance</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Latest Blog Posts Section -->
-        <section class="py-16 md:py-24 bg-white">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl section-header mb-12 text-center">Our Latest Articles</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Blog Post Card 1 -->
-                    <div class="bg-[#F4F1EC] rounded-xl shadow-lg overflow-hidden">
-                        <img src="assets/images/clean-label-snacking.jpg" alt="Clean label snack packaging with simple ingredients" class="w-full h-48 object-cover">
+                    <div class="bg-[#F4F1EC] rounded-lg shadow-md overflow-hidden group">
+                        <img src="assets/images/mercorp-brown-rice-crackers-60g-600px.jpg" alt="Mercorp Brown Rice Crackers 60g pack" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300">
                         <div class="p-6">
-                            <h3 class="text-2xl font-semibold text-[#1A2E5C] mb-2">The Rise of Clean-Label Snacking – What It Means for Brands</h3>
-                            <p class="text-sm text-sub mb-4">June 15, 2025 | Healthier Trends, B2B Insights</p>
-                            <p class="text-sub mb-4">Consumers crave clean-label snacks made from simple, recognizable ingredients. Discover how this trend is reshaping the industry, its implications for brands, and how MERCORP™ can help you meet this demand.</p>
-                            <a href="#blog-post-clean-label" class="btn-primary inline-block text-base px-4 py-2">Read More</a>
-                        </div>
-                    </div>
-                    <!-- Blog Post Card 2 -->
-                    <div class="bg-[#F4F1EC] rounded-xl shadow-lg overflow-hidden">
-                        <img src="assets/images/organic-certifications.jpg" alt="USDA Organic and EU Organic certified logos" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-semibold text-[#1A2E5C] mb-2">Navigating Organic Food Certifications: A Guide for Importers</h3>
-                            <p class="text-sm text-sub mb-4">June 1, 2025 | B2B Insights, Certifications & Compliance</p>
-                            <p class="text-sub mb-4">Understanding the complexities of EU Organic, USDA, and other global certifications is key for international trade. Our guide simplifies what you need to know for seamless market entry.</p>
-                            <a href="#blog-post-organic-certs" class="btn-primary inline-block text-base px-4 py-2">Read More</a>
-                        </div>
-                    </div>
-                    <!-- Blog Post Card 3 (Placeholder) -->
-                    <div class="bg-[#F4F1EC] rounded-xl shadow-lg overflow-hidden">
-                        <img src="assets/images/future-of-snacks.jpg" alt="Healthy snack options on display" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-semibold text-[#1A2E5C] mb-2">The Future of Healthy Snacking: Trends to Watch</h3>
-                            <p class="text-sm text-sub mb-4">May 20, 2025 | Healthier Trends</p>
-                            <p class="text-sub mb-4">Explore the upcoming innovations and consumer demands shaping the healthy snacking landscape. Stay ahead of the curve with our expert analysis.</p>
-                            <a href="#" class="btn-primary inline-block text-base px-4 py-2">Read More</a>
+                            <h3 class="text-xl font-bold text-[#2D241B]">Organic Brown Rice Crackers</h3>
+                            <p class="text-[#474747] mt-2 mb-4">Enjoy the classic goodness of organic brown rice, gently baked into light and crispy crackers, ideal for any occasion.</p>
+                            <a href="#" class="font-bold text-[#3B3418] hover:text-[#B89D62]">Learn More <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
                         </div>
                     </div>
                 </div>
+                <a href="#" class="mt-12 inline-block border-2 border-[#A39384] text-[#2D241B] px-8 py-3 rounded-full font-bold uppercase hover:bg-[#A39384] hover:text-white transition">VIEW ALL PRODUCTS</a>
             </div>
         </section>
 
-        <!-- 5.1 Individual Blog Post Template (Example: The Rise of Clean-Label Snacking) -->
-        <section id="blog-post-clean-label" class="py-16 md:py-24 bg-[#F4F1EC]">
-            <!-- Developer Note: For a real site, this would be a separate HTML file or dynamically loaded content. -->
-            <!-- SEO Meta Title: Organic Black Rice Crackers | Original Baked Healthy Snack | MERCORP™ -->
-            <!-- SEO Meta Description: Discover MERCORP™'s Organic Black Rice Crackers - a gluten-free, GMO-free, and palm oil-free baked snack. Certified EU Organic & USDA, perfect for private label. -->
-            <div class="container mx-auto px-4 max-w-4xl bg-white rounded-xl shadow-lg p-6 md:p-10">
-                <img src="assets/images/blog-post-clean-label-hero.jpg"
-                     alt="Clean label snack products on a minimalist background"
-                     class="w-full h-auto rounded-lg mb-8 shadow-md">
-
-                <h1 class="text-4xl md:text-5xl font-bold text-[#1A2E5C] mb-4 leading-tight">The Rise of Clean-Label Snacking – What It Means for Brands</h1>
-                <p class="text-md text-sub mb-8">By MERCORP™ Team | June 15, 2025 | Healthier Trends, B2B Insights</p>
-
-                <!-- Developer Note: Implement Article Schema Markup for this content -->
-
-                <h2 class="text-3xl font-semibold text-[#1A2E5C] mb-4">Understanding the Clean-Label Revolution</h2>
-                <p class="text-lg mb-6 leading-relaxed">The clean-label movement has evolved from a niche preference to a mainstream expectation. Today's consumers are scrutinizing ingredient lists like never before, seeking products made with minimal, recognizable ingredients they can trust. This shift reflects a broader desire for transparency, health, and a return to "real food."</p>
-
-                <h3 class="text-2xl font-semibold text-[#1A2E5C] mb-4">What Defines "Clean-Label"?</h3>
-                <p class="text-lg mb-6 leading-relaxed">While not a legally defined term, clean-label generally refers to food products that are:</p>
-                <ul class="list-disc list-inside space-y-2 text-lg mb-6">
-                    <li>Free from artificial flavors, colors, preservatives, and sweeteners.</li>
-                    <li>Made with ingredients that are easily understandable and pronounceable.</li>
-                    <li>Minimally processed.</li>
-                    <li>Often associated with non-GMO, organic, and allergen-free claims.</li>
-                </ul>
-
-                <h3 class="text-2xl font-semibold text-[#1A2E5C] mb-4">Why Clean-Label Matters for Your Brand</h3>
-                <p class="text-lg mb-6 leading-relaxed">Meeting the clean-label demand is no longer optional; it's a critical driver for market success, especially in competitive segments like healthy snacking. Brands that embrace clean-label principles can build stronger consumer trust, enhance product appeal, and unlock new growth opportunities.</p>
-
-                <h4 class="text-xl font-semibold text-[#1A2E5C] mb-3">Building Consumer Trust</h4>
-                <p class="text-lg mb-6 leading-relaxed">Transparency in sourcing and manufacturing builds loyalty. Clearly stating "no artificial colors" or "GMO-free" reassures health-conscious buyers.</p>
-
-                <h4 class="text-xl font-semibold text-[#1A2E5C] mb-3">Expanding Market Reach</h4>
-                <p class="text-lg mb-6 leading-relaxed">Clean-label resonates across demographics, from millennials seeking authentic products to families concerned about additives. This broad appeal makes products suitable for diverse markets, including health food stores and mainstream retailers.</p>
-
-                <h4 class="text-xl font-semibold text-[#1A2E5C] mb-3">Innovation in Product Development</h4>
-                <p class="text-lg mb-6 leading-relaxed">The clean-label trend encourages innovation in natural alternatives. For example, using fruit and vegetable extracts for natural coloring instead of artificial dyes.</p>
-
-                <h2 class="text-3xl font-semibold text-[#1A2E5C] mb-4">How MERCORP™ Supports Your Clean-Label Goals</h2>
-                <p class="text-lg mb-6 leading-relaxed">At MERCORP™, we are at the forefront of clean-label manufacturing. Our OEM and sourcing services are designed to help you develop and produce snacks that meet these stringent consumer demands.</p>
-                <ul class="list-disc list-inside space-y-2 text-lg mb-6">
-                    <li><strong>Certified Organic Ingredients:</strong> Our reliance on EU Organic, USDA, and other certified organic ingredients naturally aligns with clean-label principles.</li>
-                    <li><strong>"Free-From" Expertise:</strong> We specialize in products that are gluten-free, GMO-free, and palm oil-free, addressing common clean-label concerns.</li>
-                    <li><strong>Transparent Supply Chain:</strong> Our commitment to HACCP and GMP ensures not only safety but also full traceability of ingredients.</li>
-                    <li><strong>Custom Formulation:</strong> We can collaborate to create unique snack formulations using only natural, recognizable components.</li>
-                </ul>
-                <div class="text-center mt-8">
-                    <a href="#services" class="btn-primary text-xl">Learn About Our OEM Services</a>
-                </div>
-
-                <h2 class="text-3xl font-semibold text-[#1A2E5C] mb-4 mt-8">The Future of Clean-Label Snacking</h2>
-                <p class="text-lg mb-6 leading-relaxed">As consumers become even more informed, the clean-label movement will continue to evolve, pushing for greater sustainability, ethical sourcing, and even more minimalist ingredient lists. Brands that proactively adapt to these demands will solidify their position as leaders in the healthier food market.</p>
-                <p class="text-lg leading-relaxed mb-6">Ready to elevate your snack offerings with clean-label integrity? Contact MERCORP™ today to discuss your next product innovation.</p>
-
-                <!-- Suggested Posts -->
-                <div class="mt-12 pt-12 border-t border-divider">
-                    <h3 class="text-2xl section-header mb-6 text-center">You Might Also Like:</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="bg-[#F8F6F4] rounded-xl shadow-md overflow-hidden">
-                            <img src="assets/images/organic-certs-related.jpg" alt="Organic certifications for food importers" class="w-full h-40 object-cover">
-                            <div class="p-4">
-                                <h4 class="text-xl font-semibold text-[#1A2E5C] mb-2">Navigating Organic Food Certifications: A Guide for Importers</h4>
-                                <a href="#blog-post-organic-certs" class="text-[#D4A574] hover:underline">Read More &raquo;</a>
-                            </div>
-                        </div>
-                        <div class="bg-[#F8F6F4] rounded-xl shadow-md overflow-hidden">
-                            <img src="assets/images/healthy-snacks-future.jpg" alt="Future trends in healthy snacks" class="w-full h-40 object-cover">
-                            <div class="p-4">
-                                <h4 class="text-xl font-semibold text-[#1A2E5C] mb-2">The Future of Healthy Snacking: Trends to Watch</h4>
-                                <a href="#" class="text-[#D4A574] hover:underline">Read More &raquo;</a>
-                            </div>
-                        </div>
+        <!-- Section 4: Healthier Spotlight -->
+        <section class="py-16 sm:py-24">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-[#2D241B]">SHAPING THE FUTURE OF HEALTHY SNACKING.</h2>
+                <p class="mt-4 max-w-3xl mx-auto text-[#474747]">At Mercorp, we're at the forefront of consumer trends, passionately committed to delivering innovative and sustainable solutions that truly nourish both people and planet.</p>
+                <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Spotlight Card -->
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <img src="assets/images/icon-whole-grains-legumes.svg" alt="Whole Grains and Legumes icon" class="mx-auto h-16">
+                        <h3 class="text-xl font-bold text-[#2D241B] mt-4">Whole Grains & Legumes</h3>
+                        <p class="text-[#474747] mt-2 text-sm">As consumers seek functional nutrition, rice and legumes stand out for their natural fiber, protein, and sustained energy.</p>
+                    </div>
+                    <!-- Spotlight Card -->
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <img src="assets/images/icon-plant-based-nutrition.svg" alt="Plant-Based Nutrition icon" class="mx-auto h-16">
+                        <h3 class="text-xl font-bold text-[#2D241B] mt-4">Plant-Based Nutrition</h3>
+                        <p class="text-[#474747] mt-2 text-sm">Driven by wellness and sustainability, plant-based snacks using legumes like chickpeas offer clean fuel and guilt-free satisfaction.</p>
+                    </div>
+                    <!-- Spotlight Card -->
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <img src="assets/images/icon-organic-clean-labels.svg" alt="Organic and Clean Labels icon" class="mx-auto h-16">
+                        <h3 class="text-xl font-bold text-[#2D241B] mt-4">Organic & Clean Labels</h3>
+                        <p class="text-[#474747] mt-2 text-sm">With growing demand for transparency, clean-label and organic snacks made from real, simple ingredients earn shopper trust.</p>
+                    </div>
+                    <!-- Spotlight Card -->
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <img src="assets/images/icon-free-from-options.svg" alt="Free-From Options icon" class="mx-auto h-16">
+                        <h3 class="text-xl font-bold text-[#2D241B] mt-4">Free-From Options</h3>
+                        <p class="text-[#474747] mt-2 text-sm">Health-conscious consumers are embracing snacks free from gluten, allergens, and additives, proving that safe can still be satisfying.</p>
+                    </div>
+                    <!-- Spotlight Card -->
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <img src="assets/images/icon-sustainable-local-sourcing.svg" alt="Sustainable and Local Sourcing icon" class="mx-auto h-16">
+                        <h3 class="text-xl font-bold text-[#2D241B] mt-4">Sustainable & Local Sourcing</h3>
+                        <p class="text-[#474747] mt-2 text-sm">Eco-aware snackers now favor local and low-impact ingredients, making sustainable rice and legumes more relevant than ever.</p>
+                    </div>
+                    <!-- Spotlight Card -->
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <img src="assets/images/icon-market-demand-private-label.svg" alt="Market Demand and Private Label icon" class="mx-auto h-16">
+                        <h3 class="text-xl font-bold text-[#2D241B] mt-4">Market Demand & Private Label</h3>
+                        <p class="text-[#474747] mt-2 text-sm">Rising health awareness fuels demand for better snacking, opening space for private labels to deliver value-driven products.</p>
                     </div>
                 </div>
+                <a href="#" class="mt-12 inline-block bg-[#B89D62] text-[#2D241B] px-8 py-3 rounded-full font-bold uppercase hover:bg-[#A88A44] transition">EXPLORE OUR BUSINESS SOLUTIONS</a>
             </div>
         </section>
 
-        <!-- 6. FAQs Page Section -->
-        <section id="faqs" class="min-h-screen flex items-end justify-center relative text-white">
-            <!-- Hero Banner -->
-            <img src="assets/images/mercorp-faq-hero.jpg"
-                 alt="Frequently asked questions about healthy food manufacturing and distribution"
-                 class="absolute inset-0 w-full h-full object-cover">
-            <div class="absolute inset-0 bg-black opacity-60"></div>
-            <div class="relative z-10 text-center px-4 pb-16 md:pb-24 max-w-3xl">
-                <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">Your Questions, Answered</h1>
-                <p class="text-lg md:text-xl mx-auto">Find quick answers about MERCORP™, our products, and services.</p>
+        <!-- Section 5: About Us -->
+        <section class="py-16 sm:py-24 bg-white">
+            <div class="container mx-auto px-6 text-center max-w-4xl">
+                 <h2 class="text-3xl md:text-4xl font-extrabold text-[#2D241B]">YOUR PARTNER IN PREMIUM SOURCING & BRAND BUILDING.</h2>
+                 <p class="mt-4 text-[#8C7C6C]">At MERCORP™, we are more than just a supplier. Since 2019, we've empowered businesses like yours with high-quality, private-label products and reliable solutions that meet the evolving demands of today's market.</p>
+                 <p class="mt-6 text-[#474747]">We proudly partner with wholesale distributors, retailers, and manufacturers, delivering private-label products that meet today’s demand for consistency, competitive pricing, and dependable logistics. Whether you’re scaling up or launching something new, MERCORP™ is your reliable source for premium B2B sourcing solutions.</p>
+                 <a href="#" class="mt-8 inline-block border-2 border-[#A39384] text-[#2D241B] px-8 py-3 rounded-full font-bold uppercase hover:bg-[#A39384] hover:text-white transition">Learn More About Mercorp</a>
             </div>
         </section>
 
-        <!-- FAQs Introduction & Search -->
-        <section class="py-16 md:py-24 bg-[#F4F1EC]">
-            <div class="container mx-auto px-4 text-center max-w-5xl">
-                <h2 class="text-3xl md:text-4xl section-header mb-8">Quick Answers for Our Partners</h2>
-                <p class="text-lg mb-8">Find quick answers to common questions about MERCORP™, our products, services, and policies. If you can't find what you're looking for, please don't hesitate to contact us directly – we're here to help.</p>
-                <div class="w-full max-w-lg mx-auto mb-12">
-                    <input type="text" placeholder="Search FAQs..." class="w-full p-3 rounded-full border border-[#D9DDD8] focus:border-[#D4A574] focus-ring-gold shadow-sm text-[#2E2E2E]">
-                </div>
-                <h3 class="text-2xl font-semibold text-[#1A2E5C] mb-6">Browse by Category:</h3>
-                <div class="flex flex-wrap justify-center gap-3">
-                    <button class="bg-[#D4A574] text-white px-5 py-2 rounded-full text-lg hover:bg-[#c09163] transition-colors shadow">General Questions</button>
-                    <button class="bg-[#D4A574] text-white px-5 py-2 rounded-full text-lg hover:bg-[#c09163] transition-colors shadow">Private Label & OEM Services</button>
-                    <button class="bg-[#D4A574] text-white px-5 py-2 rounded-full text-lg hover:bg-[#c09163] transition-colors shadow">Ingredient Sourcing & Trading</button>
-                    <button class="bg-[#D4A574] text-white px-5 py-2 rounded-full text-lg hover:bg-[#c09163] transition-colors shadow">Product Features & Benefits</button>
-                    <button class="bg-[#D4A574] text-white px-5 py-2 rounded-full text-lg hover:bg-[#c09163] transition-colors shadow">Certifications & Quality</button>
-                    <button class="bg-[#D4A574] text-white px-5 py-2 rounded-full text-lg hover:bg-[#c09163] transition-colors shadow">Logistics & Delivery</button>
-                    <button class="bg-[#D4A574] text-white px-5 py-2 rounded-full text-lg hover:bg-[#c09163] transition-colors shadow">Contact & Support</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQs Content Section (Accordion Style) -->
-        <section class="py-16 md:py-24 bg-white">
-            <div class="container mx-auto px-4 max-w-4xl">
-                <h2 class="text-3xl md:text-4xl section-header mb-12 text-center">Frequently Asked Questions</h2>
-
-                <!-- Developer Note: Implement FAQPage Schema Markup for each details/summary pair -->
-
-                <!-- General Questions -->
-                <h3 class="text-2xl font-semibold text-[#1A2E5C] mb-6 border-b-2 border-[#D4A574] pb-2">General Questions</h3>
-                <details class="mb-4 rounded-lg shadow-md overflow-hidden bg-[#F8F6F4]">
-                    <summary class="font-bold text-lg text-[#1A2E5C] p-4 bg-white hover:bg-gray-50 transition-colors rounded-t-lg">What does MERCORP™ do?</summary>
-                    <div class="faq-content">
-                        <p>MERCORP™ is a B2B partner specializing in the OEM (Original Equipment Manufacturing), sourcing, and trading of premium, certified healthy food products, primarily organic rice and legume crackers. We help businesses develop their own private label lines, source high-quality ingredients, and navigate international food trade.</p>
-                    </div>
-                </details>
-                <details class="mb-4 rounded-lg shadow-md overflow-hidden bg-[#F8F6F4]">
-                    <summary class="font-bold text-lg text-[#1A2E5C] p-4 bg-white hover:bg-gray-50 transition-colors rounded-t-lg">What types of businesses does MERCORP™ partner with?</summary>
-                    <div class="faq-content">
-                        <p>We primarily partner with wholesale distributors, retailers, manufacturers, and food service providers in Europe, the Middle East, and South Asia.</p>
-                    </div>
-                </details>
-
-                <!-- Private Label & OEM Services -->
-                <h3 class="text-2xl font-semibold text-[#1A2E5C] mb-6 mt-12 border-b-2 border-[#D4A574] pb-2">Private Label & OEM Services</h3>
-                <details class="mb-4 rounded-lg shadow-md overflow-hidden bg-[#F8F6F4]">
-                    <summary class="font-bold text-lg text-[#1A2E5C] p-4 bg-white hover:bg-gray-50 transition-colors rounded-t-lg">Can MERCORP™ help me create my own brand of healthy snacks?</summary>
-                    <div class="faq-content">
-                        <p>Yes, absolutely! Our OEM services cover the entire process, from product development and formulation to private label packaging, helping you launch your unique brand of healthy snacks.</p>
-                    </div>
-                </details>
-                <details class="mb-4 rounded-lg shadow-md overflow-hidden bg-[#F8F6F4]">
-                    <summary class="font-bold text-lg text-[#1A2E5C] p-4 bg-white hover:bg-gray-50 transition-colors rounded-t-lg">What is the minimum order quantity (MOQ) for OEM services?</summary>
-                    <div class="faq-content">
-                        <p>MOQs vary depending on the product type, formulation complexity, and packaging. Please contact our sales team with your specific requirements for a detailed quote.</p>
-                    </div>
-                </details>
-                <details class="mb-4 rounded-lg shadow-md overflow-hidden bg-[#F8F6F4]">
-                    <summary class="font-bold text-lg text-[#1A2E5C] p-4 bg-white hover:bg-gray-50 transition-colors rounded-t-lg">Can you help us plan a new product line?</summary>
-                    <div class="faq-content">
-                        <p>Yes! We collaborate closely with brands to develop product lines that fit market demand, dietary trends, and regional preferences, offering expertise from concept to launch.</p>
-                    </div>
-                </details>
-
-                <!-- Ingredient Sourcing & Trading -->
-                <h3 class="text-2xl font-semibold text-[#1A2E5C] mb-6 mt-12 border-b-2 border-[#D4A574] pb-2">Ingredient Sourcing & Trading</h3>
-                <details class="mb-4 rounded-lg shadow-md overflow-hidden bg-[#F8F6F4]">
-                    <summary class="font-bold text-lg text-[#1A2E5C] p-4 bg-white hover:bg-gray-50 transition-colors rounded-t-lg">What kind of ingredients does MERCORP™ source?</summary>
-                    <div class="faq-content">
-                        <p>We primarily source premium, healthy, and organic food ingredients, focusing on rice and legumes, along with other components for snack production.</p>
-                    </div>
-                </details>
-                <details class="mb-4 rounded-lg shadow-md overflow-hidden bg-[#F8F6F4]">
-                    <summary class="font-bold text-lg text-[#1A2E5C] p-4 bg-white hover:bg-gray-50 transition-colors rounded-t-lg">Do you handle international trading and export documentation?</summary>
-                    <div class="faq-content">
-                        <p>Yes, we are experienced food traders who manage all aspects of international trade, including compliance, documentation, and logistics to ensure smooth cross-border transactions.</p>
-                    </div>
-                </details>
-
-                <!-- Product Features & Benefits -->
-                <h3 class="text-2xl font-semibold text-[#1A2E5C] mb-6 mt-12 border-b-2 border-[#D4A574] pb-2">Product Features & Benefits</h3>
-                <details class="mb-4 rounded-lg shadow-md overflow-hidden bg-[#F8F6F4]">
-                    <summary class="font-bold text-lg text-[#1A2E5C] p-4 bg-white hover:bg-gray-50 transition-colors rounded-t-lg">Are your products gluten-free?</summary>
-                    <div class="faq-content">
-                        <p>Yes, all our cracker products are certified gluten-free.</p>
-                    </div>
-                </details>
-                <details class="mb-4 rounded-lg shadow-md overflow-hidden bg-[#F8F6F4]">
-                    <summary class="font-bold text-lg text-[#1A2E5C] p-4 bg-white hover:bg-gray-50 transition-colors rounded-t-lg">Are your products organic?</summary>
-                    <div class="faq-content">
-                        <p>Yes, our core products are certified organic, meeting standards such as EU Organic, Canada Organic, USDA Organic, and Thailand Organic.</p>
-                    </div>
-                </details>
-                <details class="mb-4 rounded-lg shadow-md overflow-hidden bg-[#F8F6F4]">
-                    <summary class="font-bold text-lg text-[#1A2E5C] p-4 bg-white hover:bg-gray-50 transition-colors rounded-t-lg">Do your products contain GMOs or palm oil?</summary>
-                    <div class="faq-content">
-                        <p>No, our products are guaranteed GMO-free and palm oil-free, aligning with clean-label and sustainable practices.</p>
-                    </div>
-                </details>
-                <details class="mb-4 rounded-lg shadow-md overflow-hidden bg-[#F8F6F4]">
-                    <summary class="font-bold text-lg text-[#1A2E5C] p-4 bg-white hover:bg-gray-50 transition-colors rounded-t-lg">Are your snacks baked or fried?</summary>
-                    <div class="faq-content">
-                        <p>All our snacks are baked, ensuring a lighter, healthier crunch without any deep-frying.</p>
-                    </div>
-                </details>
-
-                <!-- Certifications & Quality -->
-                <h3 class="text-2xl font-semibold text-[#1A2E5C] mb-6 mt-12 border-b-2 border-[#D4A574] pb-2">Certifications & Quality</h3>
-                <details class="mb-4 rounded-lg shadow-md overflow-hidden bg-[#F8F6F4]">
-                    <summary class="font-bold text-lg text-[#1A2E5C] p-4 bg-white hover:bg-gray-50 transition-colors rounded-t-lg">What certifications does MERCORP™ hold?</summary>
-                    <div class="faq-content">
-                        <p>We hold a comprehensive suite of certifications, including EU Organic, Canada Organic, USDA Organic, IFOAM Organic, Halal, HACCP, and GMP. These ensure our commitment to quality, safety, and ethical production.</p>
-                    </div>
-                </details>
-                <details class="mb-4 rounded-lg shadow-md overflow-hidden bg-[#F8F6F4]">
-                    <summary class="font-bold text-lg text-[#1A2E5C] p-4 bg-white hover:bg-gray-50 transition-colors rounded-t-lg">How do you ensure product quality and safety?</summary>
-                    <div class="faq-content">
-                        <p>Our commitment to quality is upheld through stringent adherence to HACCP and GMP manufacturing standards, regular third-party audits, and continuous quality control throughout the production process.</p>
-                    </div>
-                </details>
-
-                <!-- Logistics & Delivery -->
-                <h3 class="text-2xl font-semibold text-[#1A2E5C] mb-6 mt-12 border-b-2 border-[#D4A574] pb-2">Logistics & Delivery</h3>
-                <details class="mb-4 rounded-lg shadow-md overflow-hidden bg-[#F8F6F4]">
-                    <summary class="font-bold text-lg text-[#1A2E5C] p-4 bg-white hover:bg-gray-50 transition-colors rounded-t-lg">What are your typical lead times for orders?</summary>
-                    <div class="faq-content">
-                        <p>Lead times vary based on product, order size, and current production schedules. We strive for efficient delivery and will provide an estimated timeline during the quotation process.</p>
-                    </div>
-                </details>
-                <details class="mb-4 rounded-lg shadow-md overflow-hidden bg-[#F8F6F4]">
-                    <summary class="font-bold text-lg text-[#1A2E5C] p-4 bg-white hover:bg-gray-50 transition-colors rounded-t-lg">Which regions do you serve for shipping?</summary>
-                    <div class="faq-content">
-                        <p>We specialize in serving clients in Europe, the Middle East, and South Asia, with capabilities for global logistics.</p>
-                    </div>
-                </details>
-
-                <!-- Contact & Support -->
-                <h3 class="text-2xl font-semibold text-[#1A2E5C] mb-6 mt-12 border-b-2 border-[#D4A574] pb-2">Contact & Support</h3>
-                <details class="mb-4 rounded-lg shadow-md overflow-hidden bg-[#F8F6F4]">
-                    <summary class="font-bold text-lg text-[#1A2E5C] p-4 bg-white hover:bg-gray-50 transition-colors rounded-t-lg">How can I get in touch with your team?</summary>
-                    <div class="faq-content">
-                        <p>You can contact us via Email or WhatsApp. We typically respond within 24–48 business hours.</p>
-                    </div>
-                </details>
-                <details class="mb-4 rounded-lg shadow-md overflow-hidden bg-[#F8F6F4]">
-                    <summary class="font-bold text-lg text-[#1A2E5C] p-4 bg-white hover:bg-gray-50 transition-colors rounded-t-lg">Do you offer samples of your products?</summary>
-                    <div class="faq-content">
-                        <p>Yes, we offer samples for qualified B2B inquiries. Please contact our sales team to discuss your specific needs.</p>
-                    </div>
-                </details>
-            </div>
-        </section>
-
-        <!-- 7. Contact Us Page Section -->
-        <section id="contact-us" class="min-h-screen flex items-end justify-center relative text-white">
-            <!-- Hero Banner -->
-            <img src="assets/images/mercorp-contact-hero.jpg"
-                 alt="MERCORP team communicating with global partners for B2B food solutions"
-                 class="absolute inset-0 w-full h-full object-cover">
-            <div class="absolute inset-0 bg-black opacity-60"></div>
-            <div class="relative z-10 text-center px-4 pb-16 md:pb-24 max-w-3xl">
-                <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">Connect with us</h1>
-                <p class="text-lg md:text-xl mx-auto">Looking to source high-quality food products, explore private label opportunities, or ask about our OEM and trading services? Our team at MERCORP™ is ready to help. We believe in quick responses, clear communication, and building long-term partnerships with our clients worldwide.</p>
-            </div>
-        </section>
-
-        <!-- Contact Form & Info Section -->
-        <section class="py-16 md:py-24 bg-[#F4F1EC]">
-            <div class="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <!-- Contact Information -->
-                <div class="bg-white rounded-xl shadow-lg p-8">
-                    <h2 class="text-3xl section-header mb-6">Our Details</h2>
-                    <div class="space-y-6 text-lg">
-                        <p><strong>Office Location:</strong> Mercurius Corporation Co., Ltd. 396 Charoen Nakhon 34, Khlong San, Bangkok 10600, Thailand</p>
-                        <p><strong>Email:</strong> <a href="mailto:info@mercorp.co.th" class="text-[#1A2E5C] underline hover:text-[#D4A574]">info@mercorp.co.th</a></p>
-                        <p><strong>Tel / WhatsApp:</strong> <a href="tel:+66619697945" class="text-[#1A2E5C] underline hover:text-[#D4A574]">+66 (0) 61 969 7945</a></p>
-                        <p><strong>Business Hours:</strong> Monday – Friday, 9:00 am – 6:00 pm (GMT +7)</p>
-                        <!-- Developer Note: Implement Organization Schema Markup for this information -->
-                    </div>
-                    <!-- Optional: Google Maps Embed -->
-                    <div class="mt-8 rounded-xl overflow-hidden shadow-md">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.104278065096!2d100.49507987508688!3d13.70248468667527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e299c855a7d7ef%3A0xf69c0d5c8a3c9f2b!2sMercurius%20Corporation%20Co.%2C%20Ltd.!5e0!3m2!1sen!2sth!4v1700000000000!5m2!1sen!2sth" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </div>
-
-                <!-- Contact Form -->
-                <div class="bg-white rounded-xl shadow-lg p-8">
-                    <h2 class="text-3xl section-header mb-6">Tell Us What You Need</h2>
-                    <p class="text-lg mb-8 text-sub">Fill out the form below and our team will be in touch shortly to provide solutions tailored to your goals.</p>
-                    <form class="space-y-6">
-                        <div>
-                            <label for="name" class="block text-lg font-medium text-[#2E2E2E] mb-2">Name <span class="text-red-500">*</span></label>
-                            <input type="text" id="name" name="name" required class="w-full p-3 border border-[#D9DDD8] rounded-md focus:border-[#D4A574] focus-ring-gold shadow-sm">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-lg font-medium text-[#2E2E2E] mb-2">Email <span class="text-red-500">*</span></label>
-                            <input type="email" id="email" name="email" required class="w-full p-3 border border-[#D9DDD8] rounded-md focus:border-[#D4A574] focus-ring-gold shadow-sm">
-                        </div>
-                        <div>
-                            <label for="company" class="block text-lg font-medium text-[#2E2E2E] mb-2">Company Name</label>
-                            <input type="text" id="company" name="company" class="w-full p-3 border border-[#D9DDD8] rounded-md focus:border-[#D4A574] focus-ring-gold shadow-sm">
-                        </div>
-                        <div>
-                            <label for="subject" class="block text-lg font-medium text-[#2E2E2E] mb-2">Subject <span class="text-red-500">*</span></label>
-                            <select id="subject" name="subject" required class="w-full p-3 border border-[#D9DDD8] rounded-md focus:border-[#D4A574] focus-ring-gold shadow-sm bg-white">
-                                <option value="">Select a Subject</option>
-                                <option value="General Inquiry">General Inquiry</option>
-                                <option value="OEM Services">OEM Services</option>
-                                <option value="Sourcing Inquiry">Sourcing Inquiry</option>
-                                <option value="Trading Inquiry">Trading Inquiry</option>
-                                <option value="Sample Request">Sample Request</option>
-                                <option value="Partnership Opportunity">Partnership Opportunity</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="message" class="block text-lg font-medium text-[#2E2E2E] mb-2">Message <span class="text-red-500">*</span></label>
-                            <textarea id="message" name="message" rows="5" required class="w-full p-3 border border-[#D9DDD8] rounded-md focus:border-[#D4A574] focus-ring-gold shadow-sm"></textarea>
-                        </div>
-                        <div class="flex items-center">
-                            <input type="checkbox" id="privacy-agree" name="privacy-agree" required class="h-4 w-4 text-[#D4A574] border-[#D9DDD8] rounded focus:ring-[#D4A574]">
-                            <label for="privacy-agree" class="ml-2 text-sm text-sub">I agree to the <a href="#" class="text-[#1A2E5C] underline hover:text-[#D4A574]">Privacy Policy</a> <span class="text-red-500">*</span></label>
-                        </div>
-                        <button type="submit" class="btn-primary w-full text-xl mt-4">Send Message</button>
-                    </form>
-                    <p id="confirmation-message" class="mt-8 text-center text-lg text-green-700 hidden">Thank you for your message! We have received your inquiry and will get back to you shortly.</p>
-                </div>
+        <!-- Section 6: End Section CTA -->
+        <section class="bg-[#B89D62]">
+            <div class="container mx-auto px-6 py-16 text-center">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-[#2D241B]">READY TO GROW WITH MERCORP™?</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-[#2D241B] opacity-90">Let's discuss how our premium ingredients and tailored solutions can elevate your brand.</p>
+                <a href="#" class="mt-8 inline-block bg-[#2D241B] text-[#EAEBD0] px-8 py-3 rounded-full font-bold uppercase hover:bg-opacity-90 transition-all transform hover:scale-105">CONTACT US</a>
             </div>
         </section>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-[#1A2E5C] text-white py-12">
-        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-            <div class="text-center md:text-left">
-                <img src="assets/images/mercorp-logo.png" alt="MERCORP™ Company Logo" class="h-16 rounded mx-auto md:mx-0 mb-4">
-                <p class="text-sm leading-relaxed mb-4">We create quality-driven products that support healthy living built on innovation, responsibility, and long-term partnerships.</p>
-                <div class="flex flex-wrap gap-3 justify-center md:justify-start">
-                    <!-- Footer Logo Badges (Certifications) -->
-                    <img src="assets/images/eu-organic.png" alt="EU Organic Certified" class="w-14 h-14 rounded-full shadow-md p-1 bg-white">
-                    <img src="assets/images/usda-organic.png" alt="USDA Organic Certified" class="w-14 h-14 rounded-full shadow-md p-1 bg-white">
-                    <img src="assets/images/halal.png" alt="Halal Certified" class="w-14 h-14 rounded-full shadow-md p-1 bg-white">
-                    <img src="assets/images/haccp.png" alt="HACCP Certified" class="w-14 h-14 rounded-full shadow-md p-1 bg-white">
-                    <img src="assets/images/gmp.png" alt="GMP Certified" class="w-14 h-14 rounded-full shadow-md p-1 bg-white">
+    <!-- FOOTER -->
+    <footer class="bg-[#2D241B] text-[#EAEBD0]">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <!-- Column 1: Logo & Description -->
+                <div class="md:col-span-2 lg:col-span-1">
+                    <a href="#" class="text-2xl font-bold text-[#EAEBD0] mb-4 inline-block">
+                        MERCORP™
+                    </a>
+                    <p class="text-sm text-[#A39384]">
+                        We create quality driven products that support healthy living built on innovation, responsibility, and long-term partnerships.
+                    </p>
                 </div>
-            </div>
-            <div class="text-center md:text-left">
-                <h3 class="text-xl font-semibold mb-4 text-[#D4A574]">Company Details</h3>
-                <p class="text-sm mb-2">Mercurius Corporation Co., Ltd.</p>
-                <p class="text-sm mb-2">396 Charoen Nakhon 34, Khlong San, Bangkok 10600, Thailand</p>
-                <p class="text-sm mb-2">Email: <a href="mailto:info@mercorp.co.th" class="hover:underline">info@mercorp.co.th</a></p>
-                <p class="text-sm mb-4">Tel / WhatsApp: <a href="https://wa.me/66619697945" class="hover:underline">+66 (0) 61 969 7945</a></p>
-                <div class="flex justify-center md:justify-start space-x-4">
-                    <!-- Social Media Icons -->
-                    <a href="#" class="text-white hover:text-[#D4A574] text-2xl"><img src="assets/images/facebook.png" alt="Facebook Icon" class="rounded"></a>
-                    <a href="https://wa.me/66619697945" class="text-white hover:text-[#D4A574] text-2xl"><img src="assets/images/whatsapp.png" alt="WhatsApp Icon" class="rounded"></a>
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h3 class="font-bold text-lg text-[#EAEBD0] mb-4">Quick Link</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-[#B89D62]">Home</a></li>
+                        <li><a href="#" class="hover:text-[#B89D62]">About Us</a></li>
+                        <li><a href="#" class="hover:text-[#B89D62]">Products</a></li>
+                        <li><a href="#" class="hover:text-[#B89D62]">Services</a></li>
+                        <li><a href="#" class="hover:text-[#B89D62]">Blog</a></li>
+                        <li><a href="#" class="hover:text-[#B89D62]">FAQs</a></li>
+                        <li><a href="#" class="hover:text-[#B89D62]">Contact Us</a></li>
+                    </ul>
                 </div>
-            </div>
-            <div class="text-center md:text-left">
-                <h3 class="text-xl font-semibold mb-4 text-[#D4A574]">Quick Links</h3>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="#home" class="hover:underline">Home</a></li>
-                    <li><a href="#about-us" class="hover:underline">About Us</a></li>
-                    <li><a href="#products" class="hover:underline">Products</a></li>
-                    <li><a href="#services" class="hover:underline">Services</a></li>
-                    <li><a href="#blog" class="hover:underline">Blog</a></li>
-                    <li><a href="#faqs" class="hover:underline">FAQs</a></li>
-                    <li><a href="#contact-us" class="hover:underline">Contact Us</a></li>
-                    <li><a href="#" class="hover:underline">Privacy Policy</a></li> <!-- Link to your actual PDF or page -->
-                </ul>
+                <!-- Column 3: Contact Us -->
+                <div>
+                    <h3 class="font-bold text-lg text-[#EAEBD0] mb-4">Contact Us</h3>
+                    <address class="not-italic text-sm space-y-3">
+                        <p class="font-semibold text-white">Mercurius Corporation Co., Ltd.</p>
+                        <p class="text-[#A39384]">Office Address: 100/2 Vongvanij Building B, Rama 9, Huai Kwang, Bangkok 10310, Thailand</p>
+                        <p><a href="mailto:info@mercorp.co.th" class="hover:text-[#B89D62]">E-mail: info@mercorp.co.th</a></p>
+                        <p><a href="https://wa.me/66619697945" class="hover:text-[#B89D62]">Tel / WhatsApp: +66 (0) 61 969 7945</a></p>
+                    </address>
+                </div>
+                <!-- Column 4: Standards & Social -->
+                <div>
+                    <h3 class="font-bold text-lg text-[#EAEBD0] mb-4">Our Standards</h3>
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <div class="bg-white rounded-md p-1"><img src="assets/images/eu-organic-certified-logo.svg" alt="eu organic certified logo for mercorp products." title="EU Organic" class="h-10"></div>
+                        <div class="bg-white rounded-md p-1"><img src="assets/images/usda-organic-certified-logo.svg" alt="usda organic certified logo for mercorp products." title="USDA Organic" class="h-10"></div>
+                        <div class="bg-white rounded-md p-1"><img src="assets/images/canada-organic-certified-logo.svg" alt="canada organic certified logo for mercorp products." title="Canada Organic" class="h-10"></div>
+                        <div class="bg-white rounded-md p-1"><img src="assets/images/halal-certified-product-logo.svg" alt="halal certified product for mercorp products." title="Halal Certified" class="h-10"></div>
+                        <div class="bg-white rounded-md p-1"><img src="assets/images/gmp-certified-logo.svg" alt="gmp (good manufacturing practices) certified logo for mercorp products." title="GMP Certified" class="h-10"></div>
+                        <div class="bg-white rounded-md p-1"><img src="assets/images/haccp-certified-logo.svg" alt="haccp (hazard analysis critical control point) certified logo for mercorp" title="HACCP Certified" class="h-10"></div>
+                    </div>
+                    <h3 class="font-bold text-lg text-[#EAEBD0] mb-4">Social Media</h3>
+                    <div class="flex space-x-4 text-2xl">
+                       <a href="https://www.facebook.com/profile.php?id=61561182343259" class="hover:opacity-80"><div class="bg-white rounded-full w-8 h-8 flex items-center justify-center"><img src="assets/images/facebook-logo.svg" alt="facebook logo" class="h-5"></div></a>
+                       <a href="https://wa.me/66619697945" class="hover:opacity-80"><div class="bg-white rounded-full w-8 h-8 flex items-center justify-center"><img src="assets/images/whatsapp-logo.svg" alt="whatsapp logo" class="h-5"></div></a>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="container mx-auto px-4 text-center text-sm text-gray-400 mt-8">
-            &copy; 2025 Mercurius Corporation Co., Ltd. All rights reserved.
+        <!-- Bottom Bar -->
+        <div class="bg-[#2D241B] border-t border-[#3B3418]">
+            <div class="container mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center text-sm text-[#A39384]">
+                <p>&copy; 2025 Mercurius Corporation Co., Ltd all right reserved.</p>
+                <div class="space-x-4 mt-4 sm:mt-0">
+                    <a href="#" class="hover:text-[#B89D62]">Privacy Policy</a>
+                    <a href="#" class="hover:text-[#B89D62]">Cookies Policy</a>
+                    <a href="#" class="hover:text-[#B89D62]">Terms and Conditions</a>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <!-- Simple JavaScript for form submission and smooth scrolling for internal links -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Smooth scrolling for internal navigation links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    const href = this.getAttribute('href');
-                    // Check if the href contains a '?' which indicates a query parameter for a form pre-fill
-                    // We only want to smooth scroll for simple ID anchors, or the base part of the anchor with query params
-                    const baseId = href.split('?')[0]; // Get the ID part before any query parameters
-                    const targetElement = document.querySelector(baseId);
+        // Hero Slider Initialization
+        const heroSwiper = new Swiper('.hero-slider', {
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
 
-                    if (targetElement) {
-                        e.preventDefault(); // Prevent default scroll behavior
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-
-                        // If there are query parameters, handle them (e.g., pre-fill form)
-                        if (href.includes('?')) {
-                            const urlParams = new URLSearchParams(href.split('?')[1]);
-                            const subject = urlParams.get('subject');
-                            if (subject) {
-                                const subjectSelect = document.getElementById('subject');
-                                if (subjectSelect) {
-                                    subjectSelect.value = subject;
-                                }
-                            }
-                        }
-                    } else {
-                        // If no valid target element is found, allow default behavior (e.g., for external links or if ID is missing)
-                        // console.warn(`Element with ID '${baseId}' not found for smooth scroll.`);
-                    }
-                });
-            });
-
-            // Basic contact form submission handler
-            const contactForm = document.querySelector('#contact-us form');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault(); // Prevent default form submission
-                    // In a real application, you would send this data to a backend server.
-                    // For demonstration, we just show a success message.
-                    document.getElementById('confirmation-message').classList.remove('hidden');
-                    contactForm.reset(); // Clear the form
-                    // You might hide the form or disable it after submission
-                });
-            }
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
     </script>
 </body>
